@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.main.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/layout_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:fitsSystemWindows="true"
+        android:background="@drawable/bg_bottom_radius"
+        android:theme="@style/Theme.FundamentalSubmission.AppBarOverlay" >
+
+        <TextView
+            android:id="@+id/tv_hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_24"
+            android:textColor="@color/purple_500"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/regular"
+            android:text="@string/hello_reviewer"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_welcome_back"
+            android:layout_width="wrap_content"
+            android:textColor="@color/purple_500"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_24"
+            android:fontFamily="@font/bold"
+            android:text="@string/welcome_back"
+            android:textSize="24sp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_24"
+            android:layout_marginTop="@dimen/size_16"
+            android:layout_marginEnd="@dimen/size_24"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="@dimen/size_8">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_baseline_search"
+                    android:layout_margin="@dimen/size_8"
+                    app:tint="@color/purple_200" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sv_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/search_user"
+                    android:inputType="textCapSentences"
+                    android:textColorHint="@color/purple_200"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        <include layout="@layout/content_main" />
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

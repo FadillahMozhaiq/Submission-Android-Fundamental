@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Fundamental Submission</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_splash">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="android_fundamental">Android Fundamental</string>
+    <string name="dicoding">Dicoding Submission</string>
+    <string name="hello_reviewer">Hello Reviewer,</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="search_user">Search User</string>
+    <string name="my_name">Fadillah Mozhaiq Ramadhani</string>
+    <string name="repository">Repository</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+</resources>
