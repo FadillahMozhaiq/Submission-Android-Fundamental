@@ -9,6 +9,7 @@
         android:id="@+id/layout_refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         android:padding="@dimen/size_8"
         android:layout_marginTop="@dimen/size_8">
 
@@ -23,7 +24,6 @@
         android:id="@+id/layout_shimmer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
         android:layout_marginTop="@dimen/size_8"
         android:padding="@dimen/size_8" >
 
