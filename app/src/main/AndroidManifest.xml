@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FundamentalSubmission">
+        <activity android:name=".ui.adapter.HapusActivity"></activity>
         <activity
             android:name=".ui.activity.splash.SplashActivity"
             android:theme="@style/Theme.FundamentalSubmission.NoActionBar">
@@ -22,8 +23,9 @@
             android:name=".ui.activity.detail.DetailActivity"
             android:label="@string/title_activity_detail"
             android:theme="@style/Theme.FundamentalSubmission.NoActionBar" />
-        <activity android:name=".ui.activity.main.MainActivity"
-            android:theme="@style/Theme.FundamentalSubmission.NoActionBar"/>
+        <activity
+            android:name=".ui.activity.main.MainActivity"
+            android:theme="@style/Theme.FundamentalSubmission.NoActionBar" />
     </application>
 
 </manifest>

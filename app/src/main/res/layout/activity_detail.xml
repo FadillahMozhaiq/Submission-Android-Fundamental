@@ -179,6 +179,7 @@
                 app:fabSize="mini"
                 android:layout_gravity="bottom|end"
                 android:layout_margin="@dimen/fab_margin"
+                tools:ignore="contentDescription"
                 app:srcCompat="@drawable/ic_baseline_share" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -189,6 +190,7 @@
                 android:layout_gravity="bottom|end"
                 android:layout_marginBottom="@dimen/fab_margin"
                 android:layout_marginEnd="70dp"
+                tools:ignore="contentDescription"
                 app:srcCompat="@drawable/ic_baseline_favorite" />
 
             <androidx.appcompat.widget.Toolbar
