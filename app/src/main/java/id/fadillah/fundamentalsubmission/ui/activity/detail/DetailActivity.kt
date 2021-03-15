@@ -25,4 +25,14 @@ class DetailActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
+    }
 }
