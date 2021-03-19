@@ -1,5 +1,6 @@
 package id.fadillah.fundamentalsubmission.util
 
+import android.content.Context
 import android.util.Log
 import android.widget.ImageView
 import com.squareup.picasso.Callback
@@ -15,7 +16,7 @@ object ImageHelper {
         error: Int = R.drawable.ic_no_images
     ) {
         Picasso.get()
-            .load(url)
+            .load(getImageId(imageView.context, url))
             .placeholder(placeholder)
             .error(error)
             .into(imageView, object : Callback {
@@ -26,5 +27,9 @@ object ImageHelper {
                     Log.e(TAG, "URL: ${e?.message}")
                 }
             })
+    }
+
+    private fun getImageId(context: Context, imageName: String?): Int {
+        return context.resources.getIdentifier(imageName, "drawable", context.packageName)
     }
 }

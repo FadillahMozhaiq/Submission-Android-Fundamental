@@ -21,5 +21,16 @@
 
     <style name="Theme.FundamentalSubmission.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="Theme.FundamentalSubmission.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="TextHeaderColor" parent="">
+        <item name="android:textColor">@color/purple_500</item>
+    </style>
+
+    <style name="TextInputSearch">
+        <item name="android:textColor">@color/purple_200</item>
+        <item name="android:textColorHint">@color/purple_200</item>
+    </style>
+
+    <style name="ImageViewHeaderTint">
+        <item name="tint">@color/purple_200</item>
+    </style>
 </resources>

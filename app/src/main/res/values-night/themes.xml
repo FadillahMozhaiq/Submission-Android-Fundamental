@@ -14,8 +14,16 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="ThemeOverlay.FundamentalSubmission.FullscreenContainer" parent="">
-        <item name="fullscreenBackgroundColor">@color/light_blue_900</item>
-        <item name="fullscreenTextColor">@color/light_blue_A400</item>
+    <style name="TextHeaderColor" parent="">
+        <item name="android:textColor">@color/teal_200</item>
+    </style>
+
+    <style name="TextInputSearch">
+        <item name="android:textColor">@color/teal_700</item>
+        <item name="android:textColorHint">@color/teal_700</item>
+    </style>
+
+    <style name="ImageViewHeaderTint">
+        <item name="tint">@color/teal_700</item>
     </style>
 </resources>

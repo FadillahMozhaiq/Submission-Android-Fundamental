@@ -1,14 +1,16 @@
 package id.fadillah.fundamentalsubmission.ui.activity.detail
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import id.fadillah.fundamentalsubmission.data.model.UserEntity
 
 class DetailViewModel: ViewModel() {
-    private var _dataDetail = UserEntity()
+    private var dataDetail = MutableLiveData<UserEntity?>()
 
-    fun setData(data: UserEntity) {
-        _dataDetail = data
+    fun setData(data: UserEntity?) {
+        dataDetail.value = data
     }
 
-    fun loadData(): UserEntity = _dataDetail
+    fun loadData(): LiveData<UserEntity?> = dataDetail
 }

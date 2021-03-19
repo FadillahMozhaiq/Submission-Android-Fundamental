@@ -1,7 +1,7 @@
 package id.fadillah.fundamentalsubmission.ui.activity.imageviewer
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import id.fadillah.fundamentalsubmission.databinding.ActivityImageViewerBinding
 import id.fadillah.fundamentalsubmission.util.ImageHelper
 
@@ -14,7 +14,10 @@ class ImageViewerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityImageViewerBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.let {
+            it.setDisplayHomeAsUpEnabled(true)
+            it.title = "Detail Image"
+        }
 
         val urlImage = intent?.getStringExtra(EXTRA_DETAIL_IMAGE)
 

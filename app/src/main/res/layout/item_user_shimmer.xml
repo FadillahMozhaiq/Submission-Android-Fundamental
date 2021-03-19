@@ -44,6 +44,7 @@
                 android:src="@drawable/bg_no_images"
                 android:fontFamily="@font/extrabold"
                 android:textSize="18sp"
+                tools:ignore="ContentDescription"
                 android:layout_marginTop="@dimen/size_16"
                 android:layout_marginStart="@dimen/size_24"
                 app:layout_constraintTop_toTopOf="parent"
@@ -67,6 +68,7 @@
                 app:layout_constraintStart_toEndOf="@+id/iv_location"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_location"
                 android:layout_marginStart="@dimen/size_8"
+                tools:ignore="ContentDescription"
                 android:src="@drawable/bg_no_images"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
