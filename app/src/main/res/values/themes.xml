@@ -33,4 +33,8 @@
     <style name="ImageViewHeaderTint">
         <item name="tint">@color/purple_200</item>
     </style>
+
+    <style name="TabTextColor">
+        <item name="tabTextColor">@color/purple_200</item>
+    </style>
 </resources>

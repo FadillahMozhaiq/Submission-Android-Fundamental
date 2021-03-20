@@ -29,6 +29,8 @@ class MainActivity : AppCompatActivity() {
             adapter = userAdapter
         }
 
+        binding.tabs.text
+
         showRecyclerView(false)
         viewModel.getAllData().observe(this, {
             userAdapter.setData(it)

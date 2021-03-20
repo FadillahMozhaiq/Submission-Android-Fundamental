@@ -26,4 +26,8 @@
     <style name="ImageViewHeaderTint">
         <item name="tint">@color/teal_700</item>
     </style>
+
+    <style name="TabTextColor">
+        <item name="tabTextColor">@color/teal_700</item>
+    </style>
 </resources>
