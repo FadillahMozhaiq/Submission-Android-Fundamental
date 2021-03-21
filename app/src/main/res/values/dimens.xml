@@ -3,4 +3,6 @@
     <dimen name="size_16">16dp</dimen>
     <dimen name="size_24">24dp</dimen>
     <dimen name="size_8">8dp</dimen>
+    <dimen name="size_18">18dp</dimen>
+    <dimen name="font_14">24sp</dimen>
 </resources>

@@ -1,53 +1,43 @@
 package id.fadillah.fundamentalsubmission.ui.activity.main
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.viewpager2.widget.ViewPager2
+import com.codeboy.pager2_transformers.Pager2_ZoomInTransformer
+import id.fadillah.fundamentalsubmission.R
 import id.fadillah.fundamentalsubmission.databinding.ActivityMainBinding
-import id.fadillah.fundamentalsubmission.ui.adapter.ListUserAdapter
-import id.fadillah.fundamentalsubmission.viewmodel.ViewModelFactory
+import id.fadillah.fundamentalsubmission.ui.adapter.SectionsPagerAdapter
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var viewModel: MainViewModel
-    private lateinit var userAdapter: ListUserAdapter
+    private lateinit var pagerAdapter: SectionsPagerAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val factory = ViewModelFactory.getInstance(this)
-        viewModel = ViewModelProvider(this, factory)[MainViewModel::class.java]
-        userAdapter = ListUserAdapter()
+        pagerAdapter = SectionsPagerAdapter(this)
 
-        with(binding.content.rvUser) {
-            layoutManager = LinearLayoutManager(this@MainActivity)
-//            setHasFixedSize(true)
-            adapter = userAdapter
+        binding.vp2Home.apply {
+            adapter = pagerAdapter
+            setPageTransformer(Pager2_ZoomInTransformer())
         }
 
-        binding.tabs.text
+        binding.tabs.addBubbleListener { id ->
+            when (id) {
+                R.id.home_menu -> binding.vp2Home.setCurrentItem(0, false)
+                R.id.favorite_menu -> binding.vp2Home.setCurrentItem(1, false)
+                R.id.settings_menu -> binding.vp2Home.setCurrentItem(2, false)
+            }
+        }
 
-        showRecyclerView(false)
-        viewModel.getAllData().observe(this, {
-            userAdapter.setData(it)
-            userAdapter.notifyDataSetChanged()
-            showRecyclerView(true)
+        binding.vp2Home.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                binding.tabs.setSelected(position)
+            }
         })
-
-
-    }
-
-    private fun showRecyclerView(show: Boolean) {
-        if (show) {
-            binding.content.layoutShimmer.visibility = View.GONE
-            binding.content.rvUser.visibility = View.VISIBLE
-        } else {
-            binding.content.layoutShimmer.visibility = View.VISIBLE
-            binding.content.rvUser.visibility = View.GONE
-        }
     }
 }

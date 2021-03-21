@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import id.fadillah.fundamentalsubmission.data.GithubUserRepository
 import id.fadillah.fundamentalsubmission.ui.activity.detail.DetailViewModel
-import id.fadillah.fundamentalsubmission.ui.activity.main.MainViewModel
+import id.fadillah.fundamentalsubmission.ui.fragment.home.HomeViewModel
 import id.fadillah.fundamentalsubmission.util.Injection
 
 class ViewModelFactory(private val repository: GithubUserRepository): ViewModelProvider.NewInstanceFactory() {
@@ -21,8 +21,8 @@ class ViewModelFactory(private val repository: GithubUserRepository): ViewModelP
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return when {
-            modelClass.isAssignableFrom(MainViewModel::class.java) ->
-                MainViewModel(repository) as T
+            modelClass.isAssignableFrom(HomeViewModel::class.java) ->
+                HomeViewModel(repository) as T
             modelClass.isAssignableFrom(DetailViewModel::class.java) ->
                 DetailViewModel() as T
             else -> throw Throwable("Unknown ViewModel Class ${modelClass.name}")

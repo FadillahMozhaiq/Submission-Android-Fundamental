@@ -13,4 +13,24 @@
     <string name="count_repository">%d Repository</string>
     <string name="about_me">About Me</string>
     <string name="long_lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra et urna in dictum. Mauris id dui vel diam vestibulum dictum. In sit amet sapien sem. Suspendisse semper eleifend urna, sed iaculis lectus scelerisque vel. Cras aliquam turpis ante, quis laoreet magna ullamcorper a. Quisque eleifend mollis blandit. Nunc accumsan lectus et ex sodales porta. Nulla consectetur leo nec lacus facilisis, sed interdum sapien maximus. Nulla finibus ipsum at lectus eleifend, id faucibus dui dapibus. Maecenas vel dolor magna.\n\nMorbi nulla dui, luctus fringilla dolor non, dapibus elementum orci. Suspendisse sit amet tellus congue, porta neque eu, molestie elit. Quisque ac laoreet turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam vitae pellentesque felis. Donec congue massa sed tempor molestie. Integer auctor neque ac lectus blandit interdum. Pellentesque interdum at risus in gravida. Proin facilisis diam urna, ut facilisis mauris vestibulum ut. Proin velit risus, suscipit nec nisi placerat, pulvinar accumsan purus. Vestibulum interdum placerat magna, in consectetur arcu. Mauris dictum feugiat justo, at vulputate nunc facilisis non. Etiam pulvinar lorem eget ornare laoreet. Aliquam laoreet ligula at ex eleifend mollis. Cras ultrices aliquet lorem.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="home">Home</string>
+    <string name="favorite">Favorite</string>
+    <string name="settings">Settings</string>
+    <string name="search_favorite">Search Favorite</string>
 </resources>
