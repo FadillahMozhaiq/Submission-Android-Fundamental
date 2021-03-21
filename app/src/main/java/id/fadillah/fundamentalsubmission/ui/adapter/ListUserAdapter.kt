@@ -25,7 +25,7 @@ class ListUserAdapter : RecyclerView.Adapter<ListUserAdapter.UserViewHolder>() {
         fun bind(user: UserEntity) {
             with(itemViewBinding) {
                 tvName.text = user.name
-                tvLocation.text = user.type
+                tvTypeUser.text = user.type
                 ImageHelper.getImage(ivProfile, user.image ?: "user1")
                 cvItem.setOnClickListener {
                     val intent = Intent(it.context, DetailActivity::class.java).apply {

@@ -29,13 +29,15 @@ class GithubUserRepository(
             DataMapper.listUserResponseToEntity(it)
         }
 
-    override fun loadSearchUser(query: String): LiveData<List<UserEntity>> {
-        TODO("Not yet implemented")
-    }
+    override fun loadSearchUser(query: String): LiveData<List<UserEntity>> =
+        Transformations.map(remoteDataSource.getSearchUser(query)) {
+            DataMapper.listSearchUserResponseToEntity(it)
+        }
 
-    override fun loadDetailUser(username: String): LiveData<UserEntity> {
-        TODO("Not yet implemented")
-    }
+    override fun loadDetailUser(username: String): LiveData<UserEntity> =
+        Transformations.map(remoteDataSource.getDetailUser(username)) {
+            DataMapper.detailUserResponseToEntity(it)
+        }
 
     override fun loadListRepository(username: String): LiveData<List<RepositoryEntity>> {
         TODO("Not yet implemented")

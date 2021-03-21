@@ -51,7 +51,7 @@
                 app:layout_constraintStart_toEndOf="@+id/cv_image"/>
 
             <ImageView
-                android:id="@+id/iv_location"
+                android:id="@+id/iv_type_user"
                 android:layout_width="@dimen/size_24"
                 android:layout_height="@dimen/size_24"
                 android:src="@drawable/ic_baseline_location_on"
@@ -64,9 +64,9 @@
             <ImageView
                 android:layout_width="125dp"
                 android:layout_height="@dimen/size_24"
-                app:layout_constraintTop_toTopOf="@+id/iv_location"
-                app:layout_constraintStart_toEndOf="@+id/iv_location"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_location"
+                app:layout_constraintTop_toTopOf="@+id/iv_type_user"
+                app:layout_constraintStart_toEndOf="@+id/iv_type_user"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_type_user"
                 android:layout_marginStart="@dimen/size_8"
                 tools:ignore="ContentDescription"
                 android:src="@drawable/bg_no_images"/>

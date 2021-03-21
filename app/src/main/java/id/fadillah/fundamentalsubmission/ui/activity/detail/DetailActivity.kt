@@ -3,6 +3,7 @@ package id.fadillah.fundamentalsubmission.ui.activity.detail
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -32,20 +33,21 @@ class DetailActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, factory)[DetailViewModel::class.java]
         val data = intent?.getParcelableExtra<UserEntity>(EXTRA_DETAIL_DATA)
 
-        viewModel.setData(data)
-
-        viewModel.loadData().observe(this, { data ->
-            data?.let {
+        data?.image?.let { url -> ImageHelper.getImage(binding.ivDetail, url) }
+        viewModel.getDetailUser(data?.username ?: "").observe(this, {
 //            App bar layout
-                binding.collapsingToolbar.subtitle = it.company
-                binding.collapsingToolbar.title = it.name
-                it.image?.let { url -> ImageHelper.getImage(binding.ivDetail, url) }
+            binding.collapsingToolbar.subtitle = it.company
+            binding.collapsingToolbar.title = if (it.name.isNullOrEmpty()) "Unknown" else it.name
 //            Content
-                binding.content.tvUsername.text = it.username
-                binding.content.tvRepository.text = resources.getString(R.string.count_repository, it.repository)
+            binding.content.tvUsername.text = it.username
+            binding.content.tvRepository.text = getString(R.string.count_repository, it.repository)
+            binding.content.tvFollowers.text = it.followers.toString()
+            binding.content.tvFollowing.text = it.following.toString()
+            binding.content.tvBio.text = it.bio ?: getString(R.string.long_lorem)
+            if (it.location == null)
+                binding.content.cvLocation.visibility = View.GONE
+            else {
                 binding.content.tvLocation.text = it.location
-                binding.content.tvFollowers.text = it.followers.toString()
-                binding.content.tvFollowing.text = it.following.toString()
             }
         })
 
@@ -56,16 +58,15 @@ class DetailActivity : AppCompatActivity() {
         binding.fabShare.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND).apply {
                 type = "text/plain"
-                putExtra(Intent.EXTRA_TEXT, "Hello! Follow my Github account with username:${data?.username}")
+                putExtra(Intent.EXTRA_TEXT, "Hello! Follow my Github account with username: ${data?.username}")
             }
             startActivity(Intent.createChooser(intent, "Share your profile now!"))
         }
 
         binding.ivDetail.setOnClickListener {
-            val intent = Intent(this, ImageViewerActivity::class.java).apply {
-                putExtra(EXTRA_DETAIL_IMAGE, data?.image ?: "user1")
-            }
-            startActivity(intent)
+            startActivity(Intent(this, ImageViewerActivity::class.java).apply {
+                putExtra(EXTRA_DETAIL_IMAGE, data?.image ?: "")
+            })
         }
     }
 

@@ -17,7 +17,7 @@
         app:cardElevation="@dimen/size_8">
 
         <androidx.appcompat.widget.SearchView
-            android:id="@+id/sv_search"
+            android:id="@+id/sv_user"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="4dp"

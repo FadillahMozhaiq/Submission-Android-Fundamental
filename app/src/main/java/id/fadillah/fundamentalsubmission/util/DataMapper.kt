@@ -3,6 +3,7 @@ package id.fadillah.fundamentalsubmission.util
 import id.fadillah.fundamentalsubmission.data.model.UserEntity
 import id.fadillah.fundamentalsubmission.data.source.network.response.DetailUserResponse
 import id.fadillah.fundamentalsubmission.data.source.network.response.ItemsUserResponse
+import id.fadillah.fundamentalsubmission.data.source.network.response.SearchUserResponse
 
 object DataMapper {
     fun listUserResponseToEntity(input: List<ItemsUserResponse>): List<UserEntity> =
@@ -11,6 +12,16 @@ object DataMapper {
                 it.login,
                 it.login,
                 it.avatar_url,
+                type = it.type
+            )
+        }
+
+    fun listSearchUserResponseToEntity(input: SearchUserResponse): List<UserEntity> =
+        input.items.map {
+            UserEntity(
+                it.login,
+                it.login,
+                it.avatarUrl,
                 type = it.type
             )
         }
@@ -28,6 +39,7 @@ object DataMapper {
         input.followingUrl,
         input.reposUrl,
         input.createdAt,
-        input.type
+        input.type,
+        input.bio
     )
 }

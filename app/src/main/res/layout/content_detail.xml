@@ -65,7 +65,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/iv_location"
+                android:id="@+id/iv_type_user"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_margin="@dimen/size_8"
@@ -83,9 +83,9 @@
                 android:maxLines="2"
                 android:layout_marginStart="@dimen/size_8"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_location"
-                app:layout_constraintTop_toTopOf="@+id/iv_location"
-                app:layout_constraintStart_toEndOf="@+id/iv_location"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_type_user"
+                app:layout_constraintTop_toTopOf="@+id/iv_type_user"
+                app:layout_constraintStart_toEndOf="@+id/iv_type_user"
                 tools:text="Samarinda, Indonesia" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -253,12 +253,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/about_me"
+                android:text="@string/my_bio"
                 android:textStyle="bold"
                 android:fontFamily="@font/bold"
                 android:textSize="18sp"/>
 
             <TextView
+                android:id="@+id/tv_bio"
                 android:layout_marginTop="@dimen/size_8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.codeboy.pager2_transformers.Pager2_ZoomInTransformer
+import com.codeboy.pager2_transformers.Pager2_ZoomOutSlideTransformer
 import id.fadillah.fundamentalsubmission.R
 import id.fadillah.fundamentalsubmission.databinding.ActivityMainBinding
 import id.fadillah.fundamentalsubmission.ui.adapter.SectionsPagerAdapter
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.vp2Home.apply {
             adapter = pagerAdapter
-            setPageTransformer(Pager2_ZoomInTransformer())
+            setPageTransformer(Pager2_ZoomOutSlideTransformer())
         }
 
         binding.tabs.addBubbleListener { id ->
