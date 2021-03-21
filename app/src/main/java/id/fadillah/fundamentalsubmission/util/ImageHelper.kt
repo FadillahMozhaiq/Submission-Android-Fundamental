@@ -16,7 +16,7 @@ object ImageHelper {
         error: Int = R.drawable.ic_no_images
     ) {
         Picasso.get()
-            .load(getImageId(imageView.context, url))
+            .load(url)
             .placeholder(placeholder)
             .error(error)
             .into(imageView, object : Callback {
@@ -27,9 +27,5 @@ object ImageHelper {
                     Log.e(TAG, "URL: ${e?.message}")
                 }
             })
-    }
-
-    private fun getImageId(context: Context, imageName: String?): Int {
-        return context.resources.getIdentifier(imageName, "drawable", context.packageName)
     }
 }

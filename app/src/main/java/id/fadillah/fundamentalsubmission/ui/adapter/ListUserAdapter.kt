@@ -1,6 +1,7 @@
 package id.fadillah.fundamentalsubmission.ui.adapter
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -24,7 +25,7 @@ class ListUserAdapter : RecyclerView.Adapter<ListUserAdapter.UserViewHolder>() {
         fun bind(user: UserEntity) {
             with(itemViewBinding) {
                 tvName.text = user.name
-                tvLocation.text = user.location
+                tvLocation.text = user.type
                 ImageHelper.getImage(ivProfile, user.image ?: "user1")
                 cvItem.setOnClickListener {
                     val intent = Intent(it.context, DetailActivity::class.java).apply {

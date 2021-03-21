@@ -1,16 +1,20 @@
 package id.fadillah.fundamentalsubmission.data
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import id.fadillah.fundamentalsubmission.data.model.RepositoryEntity
 import id.fadillah.fundamentalsubmission.data.model.UserEntity
 import id.fadillah.fundamentalsubmission.data.source.local.LocalDataSource
 import id.fadillah.fundamentalsubmission.data.source.network.RemoteDataSource
+import id.fadillah.fundamentalsubmission.domain.repository.IGithubUserRepository
+import id.fadillah.fundamentalsubmission.util.DataMapper
 
 class GithubUserRepository(
     private val localDataSource: LocalDataSource,
     private val remoteDataSource: RemoteDataSource
-) : UserDataSource {
+) : IGithubUserRepository {
     companion object {
         private var instance: GithubUserRepository? = null
 
@@ -20,19 +24,16 @@ class GithubUserRepository(
             }
     }
 
-    override fun loadAllUser(): LiveData<List<UserEntity>> {
-        val list = MutableLiveData<List<UserEntity>>()
-        val data = remoteDataSource.getAllUser()
-        for (item in data) {
-
+    override fun loadAllUser(): LiveData<List<UserEntity>> =
+        Transformations.map(remoteDataSource.getAllUser()) {
+            DataMapper.listUserResponseToEntity(it)
         }
+
+    override fun loadSearchUser(query: String): LiveData<List<UserEntity>> {
+        TODO("Not yet implemented")
     }
 
-    override fun loadSearchUser(): LiveData<List<UserEntity>> {
-
-    }
-
-    override fun loadDetailUser(): LiveData<UserEntity> {
+    override fun loadDetailUser(username: String): LiveData<UserEntity> {
         TODO("Not yet implemented")
     }
 

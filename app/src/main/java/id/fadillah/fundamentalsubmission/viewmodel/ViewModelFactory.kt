@@ -4,27 +4,28 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import id.fadillah.fundamentalsubmission.data.GithubUserRepository
+import id.fadillah.fundamentalsubmission.domain.usecase.GithubUserUseCase
 import id.fadillah.fundamentalsubmission.ui.activity.detail.DetailViewModel
 import id.fadillah.fundamentalsubmission.ui.fragment.home.HomeViewModel
 import id.fadillah.fundamentalsubmission.util.Injection
 
-class ViewModelFactory(private val repository: GithubUserRepository): ViewModelProvider.NewInstanceFactory() {
+class ViewModelFactory(private val githubUserUseCase: GithubUserUseCase): ViewModelProvider.NewInstanceFactory() {
 
     companion object {
         private var instance: ViewModelFactory? = null
         
-        fun getInstance(context: Context): ViewModelFactory =
+        fun getInstance(): ViewModelFactory =
             instance ?: synchronized(this) {
-                instance ?: ViewModelFactory(Injection.provideRepository(context))
+                instance ?: ViewModelFactory(Injection.provideGithubUseCase())
             }
     }
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return when {
             modelClass.isAssignableFrom(HomeViewModel::class.java) ->
-                HomeViewModel(repository) as T
+                HomeViewModel(githubUserUseCase) as T
             modelClass.isAssignableFrom(DetailViewModel::class.java) ->
-                DetailViewModel() as T
+                DetailViewModel(githubUserUseCase) as T
             else -> throw Throwable("Unknown ViewModel Class ${modelClass.name}")
         }
     }

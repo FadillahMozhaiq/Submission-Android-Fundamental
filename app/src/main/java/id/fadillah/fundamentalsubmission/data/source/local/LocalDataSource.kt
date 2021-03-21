@@ -3,16 +3,15 @@ package id.fadillah.fundamentalsubmission.data.source.local
 import android.os.Handler
 import android.os.Looper
 import id.fadillah.fundamentalsubmission.data.model.UserEntity
-import id.fadillah.fundamentalsubmission.util.JsonHelper
 
-class LocalDataSource(private val jsonHelper: JsonHelper) {
+class LocalDataSource {
     private val handler = Handler(Looper.getMainLooper())
 
     fun loadAllUser(callback: LoadAllUserCallback) {
-        val data = jsonHelper.loadUser()
+//        val data = jsonHelper.loadUser()
 //        For Showing Loading
         handler.postDelayed({
-            callback.onAllDataUserReceived(data)
+//            callback.onAllDataUserReceived(data)
         }, 3000)
     }
 

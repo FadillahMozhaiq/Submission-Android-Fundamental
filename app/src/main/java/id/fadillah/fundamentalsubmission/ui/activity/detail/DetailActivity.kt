@@ -28,7 +28,7 @@ class DetailActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val factory = ViewModelFactory.getInstance(this)
+        val factory = ViewModelFactory.getInstance()
         viewModel = ViewModelProvider(this, factory)[DetailViewModel::class.java]
         val data = intent?.getParcelableExtra<UserEntity>(EXTRA_DETAIL_DATA)
 

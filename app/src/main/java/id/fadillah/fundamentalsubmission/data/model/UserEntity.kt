@@ -16,5 +16,6 @@ data class UserEntity(
     val followersUrl: String? = null,
     val followingUrl: String? = null,
     val reposUrl: String? = null,
-    val createAt: String? = null
+    val createAt: String? = null,
+    val type: String? = null
 ): Parcelable
