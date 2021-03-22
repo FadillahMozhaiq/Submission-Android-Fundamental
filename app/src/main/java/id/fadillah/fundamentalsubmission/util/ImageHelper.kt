@@ -1,6 +1,5 @@
 package id.fadillah.fundamentalsubmission.util
 
-import android.content.Context
 import android.util.Log
 import android.widget.ImageView
 import com.squareup.picasso.Callback

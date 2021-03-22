@@ -1,9 +1,7 @@
 package id.fadillah.fundamentalsubmission.viewmodel
 
-import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import id.fadillah.fundamentalsubmission.data.GithubUserRepository
 import id.fadillah.fundamentalsubmission.domain.usecase.GithubUserUseCase
 import id.fadillah.fundamentalsubmission.ui.activity.detail.DetailViewModel
 import id.fadillah.fundamentalsubmission.ui.fragment.home.HomeViewModel

@@ -1,11 +1,10 @@
 package id.fadillah.fundamentalsubmission.ui.fragment.favorite
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import id.fadillah.fundamentalsubmission.R
+import androidx.fragment.app.Fragment
 import id.fadillah.fundamentalsubmission.databinding.FragmentFavoriteBinding
 
 class FavoriteFragment : Fragment() {
