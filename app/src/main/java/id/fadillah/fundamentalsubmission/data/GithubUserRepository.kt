@@ -14,6 +14,7 @@ class GithubUserRepository(
     private val remoteDataSource: RemoteDataSource
 ) : IGithubUserRepository {
     companion object {
+        @Volatile
         private var instance: GithubUserRepository? = null
 
         fun getInstance(localDataSource: LocalDataSource, remoteDataSource: RemoteDataSource) =
