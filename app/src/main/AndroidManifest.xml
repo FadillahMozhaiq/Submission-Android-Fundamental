@@ -25,6 +25,7 @@
         <activity
             android:name=".ui.activity.detail.DetailActivity"
             android:label="@string/title_activity_detail"
+            android:launchMode="singleTop"
             android:theme="@style/Theme.FundamentalSubmission.NoActionBar" />
         <activity
             android:name=".ui.activity.main.MainActivity"

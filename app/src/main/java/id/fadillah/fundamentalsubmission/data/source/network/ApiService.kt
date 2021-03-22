@@ -23,19 +23,19 @@ interface ApiService {
         @Path("username") username: String
     ): Call<DetailUserResponse>
 
-    @GET("{username}/repos")
+    @GET("users/{username}/repos")
     @Headers("Authorization: token ${ConstantsHelper.TOKEN}")
     fun getRepositoryUser(
         @Path("username") username: String
     ): Call<List<ItemRepositoryResponse>>
 
-    @GET("{username}/followers")
+    @GET("users/{username}/followers")
     @Headers("Authorization: token ${ConstantsHelper.TOKEN}")
     fun getFollowersUser(
         @Path("username") username: String
     ): Call<List<ItemFollowerResponse>>
 
-    @GET("{username}/following")
+    @GET("users/{username}/following")
     @Headers("Authorization: token ${ConstantsHelper.TOKEN}")
     fun getFollowingUser(
         @Path("username") username: String

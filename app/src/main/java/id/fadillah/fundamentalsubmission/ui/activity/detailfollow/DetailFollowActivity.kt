@@ -29,7 +29,7 @@ class DetailFollowActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val data = intent?.getParcelableExtra<UserEntity>(EXTRA_DETAIL_FOLLOW)
-        val sectionsDetailPagerAdapter = SectionsDetailPagerAdapter(this)
+        val sectionsDetailPagerAdapter = SectionsDetailPagerAdapter(this, data ?: UserEntity())
 
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)

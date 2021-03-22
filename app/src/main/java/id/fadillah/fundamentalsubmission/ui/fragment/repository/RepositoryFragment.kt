@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import id.fadillah.fundamentalsubmission.R
+import id.fadillah.fundamentalsubmission.data.model.UserEntity
 
 class RepositoryFragment : Fragment() {
+    var userEntity: UserEntity? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
