@@ -1,8 +1,6 @@
 package id.fadillah.fundamentalsubmission.data
 
-import android.util.Log
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import id.fadillah.fundamentalsubmission.data.model.RepositoryEntity
 import id.fadillah.fundamentalsubmission.data.model.UserEntity
@@ -39,15 +37,18 @@ class GithubUserRepository(
             DataMapper.detailUserResponseToEntity(it)
         }
 
-    override fun loadListRepository(username: String): LiveData<List<RepositoryEntity>> {
-        TODO("Not yet implemented")
-    }
+    override fun loadListRepository(username: String): LiveData<List<RepositoryEntity>> =
+        Transformations.map(remoteDataSource.getRepositoryUser(username)) {
+            DataMapper.repositoryResponseToListEntity(it)
+        }
 
-    override fun loadListFollowers(username: String): LiveData<List<UserEntity>> {
-        TODO("Not yet implemented")
-    }
+    override fun loadListFollowers(username: String): LiveData<List<UserEntity>> =
+        Transformations.map(remoteDataSource.getFollowersUser(username)) {
+            DataMapper.listFollowersResponseToEntity(it)
+        }
 
-    override fun loadListFollowing(username: String): LiveData<List<UserEntity>> {
-        TODO("Not yet implemented")
-    }
+    override fun loadListFollowing(username: String): LiveData<List<UserEntity>> =
+        Transformations.map(remoteDataSource.getFollowingUser(username)) {
+            DataMapper.listFollowingResponseToEntity(it)
+        }
 }
