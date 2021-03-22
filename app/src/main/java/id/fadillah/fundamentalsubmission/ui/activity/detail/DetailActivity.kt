@@ -10,6 +10,8 @@ import androidx.lifecycle.ViewModelProvider
 import id.fadillah.fundamentalsubmission.R
 import id.fadillah.fundamentalsubmission.data.model.UserEntity
 import id.fadillah.fundamentalsubmission.databinding.ActivityDetailBinding
+import id.fadillah.fundamentalsubmission.ui.activity.detailfollow.DetailFollowActivity
+import id.fadillah.fundamentalsubmission.ui.activity.detailfollow.DetailFollowActivity.Companion.EXTRA_DETAIL_FOLLOW
 import id.fadillah.fundamentalsubmission.ui.activity.imageviewer.ImageViewerActivity
 import id.fadillah.fundamentalsubmission.ui.activity.imageviewer.ImageViewerActivity.Companion.EXTRA_DETAIL_IMAGE
 import id.fadillah.fundamentalsubmission.util.ImageHelper
@@ -22,6 +24,7 @@ class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
     private lateinit var viewModel: DetailViewModel
+    private lateinit var dataDetail: UserEntity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
@@ -49,6 +52,7 @@ class DetailActivity : AppCompatActivity() {
             else {
                 binding.content.tvLocation.text = it.location
             }
+            dataDetail = it
         })
 
         binding.fabFavorite.setOnClickListener {
@@ -66,6 +70,24 @@ class DetailActivity : AppCompatActivity() {
         binding.ivDetail.setOnClickListener {
             startActivity(Intent(this, ImageViewerActivity::class.java).apply {
                 putExtra(EXTRA_DETAIL_IMAGE, data?.image ?: "")
+            })
+        }
+
+        binding.content.cvFollow.setOnClickListener {
+            startActivity(Intent(this, DetailFollowActivity::class.java).apply {
+                putExtra(EXTRA_DETAIL_FOLLOW, dataDetail)
+            })
+        }
+
+        binding.content.cvRepository.setOnClickListener {
+            startActivity(Intent(this, DetailFollowActivity::class.java).apply {
+                putExtra(EXTRA_DETAIL_FOLLOW, dataDetail)
+            })
+        }
+
+        binding.content.cvFollowing.setOnClickListener {
+            startActivity(Intent(this, DetailFollowActivity::class.java).apply {
+                putExtra(EXTRA_DETAIL_FOLLOW, dataDetail)
             })
         }
     }

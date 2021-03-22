@@ -39,4 +39,9 @@
     <style name="SelectedTabColor">
         <item name="iconTint">@color/teal_200</item>
     </style>
+
+    <style name="TabsFollowColor" >
+        <item name="tabTextColor">@color/text_color</item>
+        <item name="tabSelectedTextColor">@color/white</item>
+    </style>
 </resources>

@@ -3,23 +3,22 @@ package id.fadillah.fundamentalsubmission.ui.activity.main
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
-import com.codeboy.pager2_transformers.Pager2_ZoomInTransformer
 import com.codeboy.pager2_transformers.Pager2_ZoomOutSlideTransformer
 import id.fadillah.fundamentalsubmission.R
 import id.fadillah.fundamentalsubmission.databinding.ActivityMainBinding
-import id.fadillah.fundamentalsubmission.ui.adapter.SectionsPagerAdapter
+import id.fadillah.fundamentalsubmission.ui.adapter.SectionsMainPagerAdapter
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var pagerAdapter: SectionsPagerAdapter
+    private lateinit var pagerAdapter: SectionsMainPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        pagerAdapter = SectionsPagerAdapter(this)
+        pagerAdapter = SectionsMainPagerAdapter(this)
 
         binding.vp2Home.apply {
             adapter = pagerAdapter

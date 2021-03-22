@@ -7,7 +7,7 @@ import id.fadillah.fundamentalsubmission.ui.fragment.favorite.FavoriteFragment
 import id.fadillah.fundamentalsubmission.ui.fragment.home.HomeFragment
 import id.fadillah.fundamentalsubmission.ui.fragment.setting.SettingsFragment
 
-class SectionsPagerAdapter(fa: FragmentActivity): FragmentStateAdapter(fa) {
+class SectionsMainPagerAdapter(fa: FragmentActivity): FragmentStateAdapter(fa) {
     override fun getItemCount(): Int = 3
 
     override fun createFragment(position: Int): Fragment = when(position) {

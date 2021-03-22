@@ -13,6 +13,7 @@
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
     <color name="grey">#b5b5b5</color>
+    <color name="text_color">#808080</color>
     <color name="light_theme_toolbar">#FFEEEEEE</color>
     <color name="dark_theme_toolbar">#424242</color>
 </resources>

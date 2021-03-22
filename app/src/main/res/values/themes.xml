@@ -12,7 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-        <item name="android:windowTranslucentStatus">true</item>
+        <!--        <item name="android:windowTranslucentStatus">true</item>-->
     </style>
 
     <style name="Theme.FundamentalSubmission.NoActionBar">
@@ -45,5 +45,10 @@
 
     <style name="SelectedTabColor">
         <item name="iconTint">@color/purple_500</item>
+    </style>
+
+    <style name="TabsFollowColor" >
+        <item name="tabTextColor">@color/text_color</item>
+        <item name="tabSelectedTextColor">@color/purple_500</item>
     </style>
 </resources>
