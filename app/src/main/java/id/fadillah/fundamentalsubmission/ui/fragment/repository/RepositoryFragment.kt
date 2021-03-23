@@ -5,16 +5,91 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import id.fadillah.fundamentalsubmission.R
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import id.fadillah.fundamentalsubmission.data.model.UserEntity
+import id.fadillah.fundamentalsubmission.databinding.FragmentRepositoryBinding
+import id.fadillah.fundamentalsubmission.ui.adapter.ListRepositoryAdapter
+import id.fadillah.fundamentalsubmission.ui.fragment.followers.FollowersFragment.ViewState
+import id.fadillah.fundamentalsubmission.viewmodel.ViewModelFactory
 
 class RepositoryFragment : Fragment() {
-    var userEntity: UserEntity? = null
+    private var _binding: FragmentRepositoryBinding? = null
+    private val binding get() = _binding!!
+    private val repositoryAdapter: ListRepositoryAdapter by lazy { ListRepositoryAdapter() }
+    private lateinit var viewModel: RepositoryViewModel
+    private var userEntity: UserEntity? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_repository, container, false)
+        _binding = FragmentRepositoryBinding.inflate(layoutInflater)
+        setView(ViewState.LOADING)
+        with(binding.rvRepository) {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = repositoryAdapter
+            setHasFixedSize(true)
+        }
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val factory = ViewModelFactory.getInstance()
+        viewModel = ViewModelProvider(this, factory)[RepositoryViewModel::class.java]
+
+//        Data disimpan kedalam viewModel agar bertahan saat perubahan theme yg kembali memanggil onViewCreated
+        userEntity?.let { viewModel.setUser(it) }
+        getData()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    private fun setView(state: ViewState) {
+        when (state) {
+            ViewState.LOADED -> {
+                binding.layoutEmpty.visibility = View.GONE
+                binding.layoutShimmer.visibility = View.GONE
+                binding.rvRepository.visibility = View.VISIBLE
+            }
+            ViewState.EMPTY -> {
+                binding.layoutEmpty.visibility = View.VISIBLE
+                binding.layoutShimmer.visibility = View.GONE
+                binding.rvRepository.visibility = View.GONE
+            }
+            ViewState.LOADING -> {
+                binding.layoutShimmer.visibility = View.VISIBLE
+                binding.layoutEmpty.visibility = View.GONE
+                binding.rvRepository.visibility = View.GONE
+            }
+        }
+    }
+
+    private fun getData() {
+        if (viewModel.getUser() == null) {
+            setView(ViewState.EMPTY)
+        } else {
+            if (viewModel.getUser()?.repository == null) {
+                setView(ViewState.EMPTY)
+            } else {
+                viewModel.getUser()?.username?.let { username ->
+                    viewModel.getListRepository(username).observe(viewLifecycleOwner, {
+                        repositoryAdapter.setData(it)
+                        repositoryAdapter.notifyDataSetChanged()
+                        setView(ViewState.LOADED)
+                    })
+                }
+            }
+        }
+    }
+
+    fun setUserData(user: UserEntity) {
+        userEntity = user
     }
 }

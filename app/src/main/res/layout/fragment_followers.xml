@@ -30,23 +30,22 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_user"
-        android:visibility="gone"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:padding="@dimen/size_8"
         android:layout_marginTop="@dimen/size_8"
         tools:listitem="@layout/item_user"/>
 
     <RelativeLayout
         android:id="@+id/layout_empty"
-        android:visibility="gone"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone">
         <ImageView
             android:id="@+id/iv_emote"
             android:layout_width="wrap_content"
             android:layout_height="120dp"
-            android:src="@drawable/dissastisfied_emoticon"
+            android:src="@drawable/dissatisfied_emoticon"
             android:layout_centerInParent="true"
             app:tint="@color/teal_700"
             tools:ignore="ContentDescription"/>
@@ -63,6 +62,7 @@
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/layout_shimmer"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/size_8"
         android:padding="@dimen/size_8" >

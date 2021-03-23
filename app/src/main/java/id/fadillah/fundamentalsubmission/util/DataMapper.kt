@@ -71,6 +71,7 @@ object DataMapper {
                 it.description,
                 convertIsoTimeToDate(it.createdAt),
                 it.language,
+                it.stargazersCount ?: 0
             )
         }
 

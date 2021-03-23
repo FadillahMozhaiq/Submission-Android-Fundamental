@@ -1,7 +1,6 @@
 package id.fadillah.fundamentalsubmission.ui.fragment.followers
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,7 +18,7 @@ class FollowersFragment : Fragment(), SearchView.OnQueryTextListener {
     private val binding get() = _binding!!
     private val followAdapter: ListUserAdapter by lazy { ListUserAdapter() }
     private lateinit var viewModel: FollowersViewModel
-    var userEntity: UserEntity? = null
+    private var userEntity: UserEntity? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,6 +42,7 @@ class FollowersFragment : Fragment(), SearchView.OnQueryTextListener {
         val factory = ViewModelFactory.getInstance()
         viewModel = ViewModelProvider(this, factory)[FollowersViewModel::class.java]
 
+        userEntity?.let { viewModel.setUser(it) }
         getData()
     }
 
@@ -96,31 +96,42 @@ class FollowersFragment : Fragment(), SearchView.OnQueryTextListener {
     }
 
     private fun getData() {
-        if (userEntity == null) {
+        if (viewModel.getUser() == null) {
             setView(ViewState.EMPTY)
         } else {
-            userEntity?.username?.let { username ->
-                viewModel.getListFollowers(username).observe(viewLifecycleOwner, {
-                    followAdapter.setData(it)
-                    followAdapter.notifyDataSetChanged()
-                    setView(ViewState.LOADED)
-                })
+            if (viewModel.getUser()?.followers == 0) {
+                setView(ViewState.EMPTY)
+            } else {
+                viewModel.getUser()?.username?.let { username ->
+                    viewModel.getListFollowers(username).observe(viewLifecycleOwner, {
+                        followAdapter.setData(it)
+                        followAdapter.notifyDataSetChanged()
+                        setView(ViewState.LOADED)
+                    })
+                }
             }
         }
     }
 
     private fun searchUser(query: String) {
-        if (userEntity == null) {
+        if (viewModel.getUser() == null) {
             setView(ViewState.EMPTY)
         } else {
-            userEntity?.username?.let { username ->
+            viewModel.getUser()?.username?.let { username ->
                 setView(ViewState.LOADING)
                 viewModel.getSearchListFollowers(username, query).observe(viewLifecycleOwner, {
                     followAdapter.setData(it)
                     followAdapter.notifyDataSetChanged()
-                    setView(ViewState.LOADED)
+                    if (it.isEmpty())
+                        setView(ViewState.EMPTY)
+                    else
+                        setView(ViewState.LOADED)
                 })
             }
         }
+    }
+
+    fun setUserFollowers(user: UserEntity) {
+        userEntity = user
     }
 }

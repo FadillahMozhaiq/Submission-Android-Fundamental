@@ -20,6 +20,7 @@ class DetailFollowActivity : AppCompatActivity() {
         )
 
         const val EXTRA_DETAIL_FOLLOW = "extra_Detail_follow"
+        const val EXTRA_POSITION = "extra_position"
     }
 
     private lateinit var binding: ActivityDetailFollowBinding
@@ -29,6 +30,7 @@ class DetailFollowActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val data = intent?.getParcelableExtra<UserEntity>(EXTRA_DETAIL_FOLLOW)
+        val position = intent?.getIntExtra(EXTRA_POSITION, 0)
         val sectionsDetailPagerAdapter = SectionsDetailPagerAdapter(this, data ?: UserEntity())
 
         supportActionBar?.apply {
@@ -41,11 +43,15 @@ class DetailFollowActivity : AppCompatActivity() {
             tabs.text =
                 when (position) {
                     0 -> getString(TAB_TITLES[position], data?.followers ?: 0)
-                    1 -> getString(TAB_TITLES[position], data?.followers ?: 0)
+                    1 -> getString(TAB_TITLES[position], data?.following ?: 0)
                     2 -> getString(TAB_TITLES[position], data?.repository ?: 0)
                     else -> getString(TAB_TITLES[position], data?.followers ?: 0 )
                 }
         }.attach()
+
+        if (position != null) {
+            binding.vp2DetailFollow.currentItem = position
+        }
     }
 
     override fun onBackPressed() {

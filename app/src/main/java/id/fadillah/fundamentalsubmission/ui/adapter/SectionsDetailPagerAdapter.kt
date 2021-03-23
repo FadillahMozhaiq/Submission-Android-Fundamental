@@ -13,13 +13,13 @@ class SectionsDetailPagerAdapter(fa: FragmentActivity, private val user: UserEnt
 
     override fun createFragment(position: Int): Fragment = when (position) {
         0 -> FollowersFragment().apply {
-            userEntity = user
+            setUserFollowers(user)
         }
         1 -> FollowingFragment().apply {
-            userEntity = user
+            setUserFollowing(user)
         }
         2 -> RepositoryFragment().apply {
-            userEntity = user
+            setUserData(user)
         }
         else -> Fragment()
     }

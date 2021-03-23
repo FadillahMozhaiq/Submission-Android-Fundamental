@@ -55,9 +55,6 @@ data class ItemRepositoryResponse(
 	@field:SerializedName("ssh_url")
 	val sshUrl: String? = null,
 
-	@field:SerializedName("license")
-	val license: String? = null,
-
 	@field:SerializedName("full_name")
 	val fullName: String? = null,
 

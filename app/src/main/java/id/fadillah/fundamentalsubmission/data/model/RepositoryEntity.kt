@@ -5,5 +5,6 @@ data class RepositoryEntity(
     val name: String,
     val description: String? = null,
     val createAt: String? = null,
-    val language: String? = null
+    val language: String? = null,
+    val stargazer: Int = 0
 )
