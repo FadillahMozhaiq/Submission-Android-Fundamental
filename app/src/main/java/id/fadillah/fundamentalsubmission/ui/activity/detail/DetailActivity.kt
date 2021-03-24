@@ -44,7 +44,7 @@ class DetailActivity : AppCompatActivity() {
             binding.collapsingToolbar.title = if (it.name.isNullOrEmpty()) "Unknown" else it.name
 //            Content
             binding.content.tvUsername.text = it.username
-            binding.content.tvRepository.text = getString(R.string.count_repository, it.repository)
+            binding.content.tvRepository.text = resources.getQuantityString(R.plurals.count_repository, it.repository, it.repository)
             binding.content.tvFollowers.text = it.followers.toString()
             binding.content.tvFollowing.text = it.following.toString()
             binding.content.tvBio.text = it.bio ?: getString(R.string.long_lorem)

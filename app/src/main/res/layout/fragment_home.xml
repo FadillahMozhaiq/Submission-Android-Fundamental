@@ -29,6 +29,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
         android:id="@+id/rv_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -67,5 +68,27 @@
         </LinearLayout>
 
     </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/iv_emote"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:src="@drawable/dissatisfied_emoticon"
+            android:layout_centerInParent="true"
+            app:tint="@color/teal_700"
+            tools:ignore="ContentDescription"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_emote"
+            android:textSize="18sp"
+            android:fontFamily="@font/italic"
+            android:layout_centerHorizontal="true"
+            android:text="@string/its_empty" />
+    </RelativeLayout>
 
 </LinearLayout>

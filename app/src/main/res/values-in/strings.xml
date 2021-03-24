@@ -1,67 +1,63 @@
 <resources>
-<!--    App Name-->
+    <!--    App Name-->
     <string name="app_name">Fundamental Submission</string>
 
-<!--    Title of Activity-->
+    <!--    Title of Activity-->
     <string name="title_activity_detail">DetailActivity</string>
 
-<!--    Splash Resource-->
+    <!--    Splash Resource-->
     <string name="android_fundamental">Android Fundamental</string>
     <string name="dicoding">Dicoding Submission</string>
 
-<!--    Home Header-->
-    <string name="hello_reviewer">Hello Reviewer,</string>
-    <string name="welcome_back">Welcome Back!</string>
+    <!--    Home Header-->
+    <string name="hello_reviewer">Halo Reviewer,</string>
+    <string name="welcome_back">Selamat Datang Kembali!</string>
 
-<!--    Placeholder Detail Activity-->
+    <!--    Placeholder Detail Activity-->
     <string name="my_name">Fadillah Mozhaiq Ramadhani</string>
     <string name="google">Google, Inc</string>
-    <string name="my_bio">My Bio</string>
-    <string name="its_empty">Sorry, it\'s empty</string>
+    <string name="my_bio">Bio Saya</string>
+    <string name="its_empty">Maaf, ini kosong!</string>
     <string name="long_lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra et urna in dictum. Mauris id dui vel diam vestibulum dictum. In sit amet sapien sem. Suspendisse semper eleifend urna, sed iaculis lectus scelerisque vel. Cras aliquam turpis ante, quis laoreet magna ullamcorper a. Quisque eleifend mollis blandit. Nunc accumsan lectus et ex sodales porta. Nulla consectetur leo nec lacus facilisis, sed interdum sapien maximus. Nulla finibus ipsum at lectus eleifend, id faucibus dui dapibus. Maecenas vel dolor magna.\n\nMorbi nulla dui, luctus fringilla dolor non, dapibus elementum orci. Suspendisse sit amet tellus congue, porta neque eu, molestie elit. Quisque ac laoreet turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam vitae pellentesque felis. Donec congue massa sed tempor molestie. Integer auctor neque ac lectus blandit interdum. Pellentesque interdum at risus in gravida. Proin facilisis diam urna, ut facilisis mauris vestibulum ut. Proin velit risus, suscipit nec nisi placerat, pulvinar accumsan purus. Vestibulum interdum placerat magna, in consectetur arcu. Mauris dictum feugiat justo, at vulputate nunc facilisis non. Etiam pulvinar lorem eget ornare laoreet. Aliquam laoreet ligula at ex eleifend mollis. Cras ultrices aliquet lorem.</string>
 
-<!--    Resource in Detail Actiity-->
-    <string name="followers">Followers</string>
-    <string name="following">Following</string>
+    <!--    Resource in Detail Actiity-->
+    <string name="followers">Pengikut</string>
+    <string name="following">Mengikuti</string>
 
     <!-- Preference Titles -->
-    <string name="language_header">Language</string>
-    <string name="reminder_header">Reminder</string>
+    <string name="language_header">Bahasa</string>
+    <string name="reminder_header">Pengingat</string>
 
     <!-- Language Preferences -->
-    <string name="language_title">Choose your language</string>
+    <string name="language_title">Pilih bahasa anda</string>
 
     <!-- Reminder Preferences -->
-    <string name="reminder_title">Set Reminder</string>
-    <string name="reminder_summary_on">Automatically sends notification to return to the application at 09.00 AM</string>
-    <string name="reminder_summary_off">Does not automatically send a notification to return to the application</string>
+    <string name="reminder_title">Atur Pengingat</string>
+    <string name="reminder_summary_on">Otomatis mengirimkan notifikasi untuk kembali ke aplikasi pada pukul 09.00 pagi</string>
+    <string name="reminder_summary_off">Tidak mengirimkan notifikasi secara otomatis untuk kembali ke aplikasi</string>
 
-<!--    Tab Title-->
-    <string name="home">Home</string>
-    <string name="favorite">Favorite</string>
-    <string name="settings">Settings</string>
+    <!--    Tab Title-->
+    <string name="home">Rumah</string>
+    <string name="favorite">Favorit</string>
+    <string name="settings">Pengaturan</string>
 
-<!--    Search Hint-->
-    <string name="search_user">Search User</string>
-    <string name="search_favorite">Search Favorite</string>
-    <string name="search_followers">Search Followers</string>
-    <string name="search_following">Search Following</string>
+    <!--    Search Hint-->
+    <string name="search_user">Cari Pengguna</string>
+    <string name="search_favorite">Cari Favorit</string>
+    <string name="search_followers">Cari Pengikut</string>
+    <string name="search_following">Cari Mengikuti</string>
 
     <!--    Plurals     -->
     <plurals name="followers_tab_title">
-        <item quantity="one">%d Follower</item>
-        <item quantity="other">%d Followers</item>
+        <item quantity="other">%d Pengikut</item>
     </plurals>
     <plurals name="following_tab_title">
-        <item quantity="one">%d Following</item>
-        <item quantity="other">%d Followings</item>
+        <item quantity="other">%d Mengikuti</item>
     </plurals>
     <plurals name="repository_tab_title">
-        <item quantity="one"> %d Repository</item>
-        <item quantity="other"> %d Repositories</item>
+        <item quantity="other"> %d Penyimpanan</item>
     </plurals>
     <plurals name="count_repository">
-        <item quantity="one"> %d Repository</item>
-        <item quantity="other"> %d Repositories</item>
+        <item quantity="other"> %d Penyimpanan</item>
     </plurals>
 </resources>

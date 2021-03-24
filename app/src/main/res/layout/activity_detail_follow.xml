@@ -16,7 +16,6 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs_follow"
             style="@style/TabsFollowColor"
-            android:fitsSystemWindows="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -25,7 +24,6 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vp2_detail_follow"
         android:layout_width="match_parent"
-        android:fitsSystemWindows="true"
         android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
 

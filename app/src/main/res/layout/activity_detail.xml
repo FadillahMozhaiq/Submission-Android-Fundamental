@@ -22,8 +22,8 @@
             app:expandedTitleMarginStart="14dp"
             app:expandedTitleMarginEnd="64dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:title="@string/my_name"
-            app:subtitle="@string/google">
+            tools:title="@string/my_name"
+            tools:subtitle="@string/google">
 
             <ImageView
                 android:id="@+id/iv_detail"

@@ -17,6 +17,7 @@ class GithubUserRepository(
         @Volatile
         private var instance: GithubUserRepository? = null
 
+        @JvmStatic
         fun getInstance(localDataSource: LocalDataSource, remoteDataSource: RemoteDataSource) =
             instance ?: synchronized(this) {
                 instance ?: GithubUserRepository(localDataSource, remoteDataSource)
@@ -52,4 +53,13 @@ class GithubUserRepository(
         Transformations.map(remoteDataSource.getFollowingUser(username)) {
             DataMapper.listFollowingResponseToEntity(it)
         }
+
+    override fun loaFavoriteUser(): LiveData<List<UserEntity>> =
+        Transformations.map(localDataSource.loadAllUser()) {
+
+        }
+
+    override fun setFavoriteUser(userEntity: UserEntity) {
+        TODO("Not yet implemented")
+    }
 }

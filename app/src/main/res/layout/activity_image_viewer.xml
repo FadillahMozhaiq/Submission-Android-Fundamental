@@ -9,6 +9,6 @@
         android:id="@+id/pv_detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:src="@drawable/user1" />
+        tools:src="@drawable/github_poster" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

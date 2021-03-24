@@ -29,7 +29,8 @@
             android:theme="@style/Theme.FundamentalSubmission.NoActionBar" />
         <activity
             android:name=".ui.activity.main.MainActivity"
-            android:theme="@style/Theme.FundamentalSubmission.NoActionBar" />
+            android:theme="@style/Theme.FundamentalSubmission.NoActionBar"
+            android:configChanges="locale" />
     </application>
 
 </manifest>

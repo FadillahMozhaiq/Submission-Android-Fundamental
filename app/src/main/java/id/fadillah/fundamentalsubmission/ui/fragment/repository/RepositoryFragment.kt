@@ -75,7 +75,7 @@ class RepositoryFragment : Fragment() {
         if (viewModel.getUser() == null) {
             setView(ViewState.EMPTY)
         } else {
-            if (viewModel.getUser()?.repository == null) {
+            if (viewModel.getUser()?.repository == 0) {
                 setView(ViewState.EMPTY)
             } else {
                 viewModel.getUser()?.username?.let { username ->

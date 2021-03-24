@@ -66,12 +66,6 @@ class FollowersFragment : Fragment(), SearchView.OnQueryTextListener {
         _binding = null
     }
 
-    enum class ViewState {
-        LOADED,
-        EMPTY,
-        LOADING
-    }
-
     private fun setView(state: ViewState) {
         when (state) {
             ViewState.LOADED -> {
@@ -81,6 +75,11 @@ class FollowersFragment : Fragment(), SearchView.OnQueryTextListener {
                 binding.cvSearch.visibility = View.VISIBLE
             }
             ViewState.EMPTY -> {
+                binding.layoutEmpty.visibility = View.VISIBLE
+                binding.layoutShimmer.visibility = View.GONE
+                binding.rvUser.visibility = View.GONE
+            }
+            ViewState.NOTHING -> {
                 binding.layoutEmpty.visibility = View.VISIBLE
                 binding.layoutShimmer.visibility = View.GONE
                 binding.rvUser.visibility = View.GONE
@@ -97,10 +96,10 @@ class FollowersFragment : Fragment(), SearchView.OnQueryTextListener {
 
     private fun getData() {
         if (viewModel.getUser() == null) {
-            setView(ViewState.EMPTY)
+            setView(ViewState.NOTHING)
         } else {
             if (viewModel.getUser()?.followers == 0) {
-                setView(ViewState.EMPTY)
+                setView(ViewState.NOTHING)
             } else {
                 viewModel.getUser()?.username?.let { username ->
                     viewModel.getListFollowers(username).observe(viewLifecycleOwner, {
@@ -115,7 +114,7 @@ class FollowersFragment : Fragment(), SearchView.OnQueryTextListener {
 
     private fun searchUser(query: String) {
         if (viewModel.getUser() == null) {
-            setView(ViewState.EMPTY)
+            setView(ViewState.NOTHING)
         } else {
             viewModel.getUser()?.username?.let { username ->
                 setView(ViewState.LOADING)
@@ -133,5 +132,12 @@ class FollowersFragment : Fragment(), SearchView.OnQueryTextListener {
 
     fun setUserFollowers(user: UserEntity) {
         userEntity = user
+    }
+
+    enum class ViewState {
+        LOADED,
+        EMPTY,
+        LOADING,
+        NOTHING
     }
 }

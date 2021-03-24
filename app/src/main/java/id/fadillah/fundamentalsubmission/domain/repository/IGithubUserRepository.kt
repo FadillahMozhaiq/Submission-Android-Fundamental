@@ -11,4 +11,6 @@ interface IGithubUserRepository {
     fun loadListRepository(username: String): LiveData<List<RepositoryEntity>>
     fun loadListFollowers(username: String): LiveData<List<UserEntity>>
     fun loadListFollowing(username: String): LiveData<List<UserEntity>>
+    fun loaFavoriteUser(): LiveData<List<UserEntity>>
+    fun setFavoriteUser(userEntity: UserEntity)
 }

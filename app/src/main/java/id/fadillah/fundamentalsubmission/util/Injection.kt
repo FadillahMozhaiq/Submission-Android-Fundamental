@@ -9,7 +9,7 @@ import id.fadillah.fundamentalsubmission.domain.usecase.GithubUserUseCase
 object Injection {
     private fun provideRepository(): GithubUserRepository {
         val localDataSource = LocalDataSource()
-        val remoteDataSource = RemoteDataSource()
+        val remoteDataSource = RemoteDataSource.getInstance()
         return GithubUserRepository.getInstance(localDataSource, remoteDataSource)
     }
 

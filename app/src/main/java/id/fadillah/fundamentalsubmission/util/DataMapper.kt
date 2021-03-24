@@ -4,6 +4,7 @@ import id.fadillah.fundamentalsubmission.data.model.RepositoryEntity
 import id.fadillah.fundamentalsubmission.data.model.UserEntity
 import id.fadillah.fundamentalsubmission.data.source.network.response.*
 import java.text.SimpleDateFormat
+import java.util.*
 
 object DataMapper {
     fun listUserResponseToEntity(input: List<ItemsUserResponse>): List<UserEntity> =
@@ -77,8 +78,8 @@ object DataMapper {
 
     private fun convertIsoTimeToDate(time: String?): String {
         time ?: return ""
-        val parser = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
-        val formatter = SimpleDateFormat("dd.MM.yyyy HH:mm")
+        val parser = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.US)
+        val formatter = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.US)
         return formatter.format(parser.parse(time))
     }
 }

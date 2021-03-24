@@ -14,8 +14,10 @@ import id.fadillah.fundamentalsubmission.util.Injection
 class ViewModelFactory(private val githubUserUseCase: GithubUserUseCase): ViewModelProvider.NewInstanceFactory() {
 
     companion object {
+        @Volatile
         private var instance: ViewModelFactory? = null
-        
+
+        @JvmStatic
         fun getInstance(): ViewModelFactory =
             instance ?: synchronized(this) {
                 instance ?: ViewModelFactory(Injection.provideGithubUseCase())

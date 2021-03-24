@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import id.fadillah.fundamentalsubmission.databinding.FragmentHomeBinding
 import id.fadillah.fundamentalsubmission.ui.adapter.ListUserAdapter
+import id.fadillah.fundamentalsubmission.ui.fragment.followers.FollowersFragment.ViewState
 import id.fadillah.fundamentalsubmission.viewmodel.ViewModelFactory
 
 class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
@@ -67,30 +68,43 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
     }
 
     private fun searchUser(query: String) {
-        showRecyclerView(false)
+        setView(ViewState.LOADING)
         homeViewModel.getSearchUsers(query).observe(this, {
-            showRecyclerView(true)
+            if (it.isEmpty())
+                setView(ViewState.EMPTY)
+            else
+                setView(ViewState.LOADED)
             userAdapter.setData(it)
             userAdapter.notifyDataSetChanged()
         })
     }
 
     private fun getData() {
-        showRecyclerView(false)
+        setView(ViewState.LOADING)
         homeViewModel.getAllData().observe(viewLifecycleOwner, {
-            showRecyclerView(true)
+            setView(ViewState.LOADED)
             userAdapter.setData(it)
             userAdapter.notifyDataSetChanged()
         })
     }
 
-    private fun showRecyclerView(show: Boolean) {
-        if (show) {
-            binding.layoutShimmer.visibility = View.GONE
-            binding.rvUser.visibility = View.VISIBLE
-        } else {
-            binding.layoutShimmer.visibility = View.VISIBLE
-            binding.rvUser.visibility = View.GONE
+    private fun setView(state: ViewState) {
+        when (state) {
+            ViewState.LOADED -> {
+                binding.layoutEmpty.visibility = View.GONE
+                binding.layoutShimmer.visibility = View.GONE
+                binding.rvUser.visibility = View.VISIBLE
+            }
+            ViewState.EMPTY -> {
+                binding.layoutEmpty.visibility = View.VISIBLE
+                binding.layoutShimmer.visibility = View.GONE
+                binding.rvUser.visibility = View.GONE
+            }
+            ViewState.LOADING -> {
+                binding.layoutShimmer.visibility = View.VISIBLE
+                binding.layoutEmpty.visibility = View.GONE
+                binding.rvUser.visibility = View.GONE
+            }
         }
     }
 }

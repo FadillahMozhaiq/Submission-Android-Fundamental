@@ -31,20 +31,8 @@
         <item name="android:textColorHint">@color/purple_200</item>
     </style>
 
-    <style name="ImageViewHeaderTint">
-        <item name="tint">@color/purple_200</item>
-    </style>
-
-    <style name="TabTextColor">
-        <item name="tabTextColor">@color/purple_200</item>
-    </style>
-
     <style name="ToolbarBackgroundColor">
         <item name="contentScrim">@color/light_theme_toolbar</item>
-    </style>
-
-    <style name="SelectedTabColor">
-        <item name="iconTint">@color/purple_500</item>
     </style>
 
     <style name="TabsFollowColor" >

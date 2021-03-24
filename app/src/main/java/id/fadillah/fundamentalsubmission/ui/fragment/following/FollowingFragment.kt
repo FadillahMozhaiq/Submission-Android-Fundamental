@@ -80,6 +80,11 @@ class FollowingFragment : Fragment(), SearchView.OnQueryTextListener {
                 binding.layoutEmpty.visibility = View.VISIBLE
                 binding.layoutShimmer.visibility = View.GONE
                 binding.rvUser.visibility = View.GONE
+            }
+            ViewState.NOTHING -> {
+                binding.layoutEmpty.visibility = View.VISIBLE
+                binding.layoutShimmer.visibility = View.GONE
+                binding.rvUser.visibility = View.GONE
                 binding.cvSearch.visibility = View.GONE
             }
             ViewState.LOADING -> {
@@ -93,10 +98,10 @@ class FollowingFragment : Fragment(), SearchView.OnQueryTextListener {
 
     private fun getData() {
         if (viewModel.getUser() == null) {
-            setView(ViewState.EMPTY)
+            setView(ViewState.NOTHING)
         } else {
             if (viewModel.getUser()?.following == 0) {
-                setView(ViewState.EMPTY)
+                setView(ViewState.NOTHING)
             } else {
                 viewModel.getUser()?.username?.let { username ->
                     viewModel.getListFollowing(username).observe(viewLifecycleOwner, {
@@ -111,7 +116,7 @@ class FollowingFragment : Fragment(), SearchView.OnQueryTextListener {
 
     private fun searchUser(query: String) {
         if (viewModel.getUser() == null) {
-            setView(ViewState.EMPTY)
+            setView(ViewState.NOTHING)
         } else {
             viewModel.getUser()?.username?.let { username ->
                 setView(ViewState.LOADING)
