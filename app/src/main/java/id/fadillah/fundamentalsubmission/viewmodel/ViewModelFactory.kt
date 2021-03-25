@@ -1,5 +1,6 @@
 package id.fadillah.fundamentalsubmission.viewmodel
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import id.fadillah.fundamentalsubmission.domain.usecase.GithubUserUseCase
@@ -18,9 +19,9 @@ class ViewModelFactory(private val githubUserUseCase: GithubUserUseCase): ViewMo
         private var instance: ViewModelFactory? = null
 
         @JvmStatic
-        fun getInstance(): ViewModelFactory =
+        fun getInstance(context: Context): ViewModelFactory =
             instance ?: synchronized(this) {
-                instance ?: ViewModelFactory(Injection.provideGithubUseCase())
+                instance ?: ViewModelFactory(Injection.provideGithubUseCase(context))
             }
     }
 

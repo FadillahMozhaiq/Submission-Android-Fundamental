@@ -54,12 +54,27 @@ class GithubUserRepository(
             DataMapper.listFollowingResponseToEntity(it)
         }
 
-    override fun loaFavoriteUser(): LiveData<List<UserEntity>> =
+    override fun loadFavoriteUser(): LiveData<List<UserEntity>> =
         Transformations.map(localDataSource.loadAllUser()) {
-
+            DataMapper.listUserDatabaseToUserEntity(it)
         }
 
-    override fun setFavoriteUser(userEntity: UserEntity) {
-        TODO("Not yet implemented")
+    override fun loadSearchFavoriteUser(query: String): LiveData<List<UserEntity>> =
+        Transformations.map(localDataSource.searchUser(query)) {
+            DataMapper.listUserDatabaseToUserEntity(it)
+        }
+
+    override fun loadIsFavoriteUser(username: String): LiveData<Boolean> =
+        Transformations.map(localDataSource.checkIsFavorite(username)) {
+            it.isNotEmpty()
+        }
+
+    override suspend fun setFavoriteUser(userEntity: UserEntity) {
+        if (!userEntity.bookmarked) {
+            userEntity.bookmarked = true
+            localDataSource.insertUser(DataMapper.userEntityToDatabase(userEntity))
+        } else {
+            localDataSource.deleteUser(DataMapper.userEntityToDatabase(userEntity))
+        }
     }
 }

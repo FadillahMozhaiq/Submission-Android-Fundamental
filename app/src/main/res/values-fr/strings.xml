@@ -23,6 +23,11 @@
     <!--    Resource in Detail Actiity-->
     <string name="followers">Suiveurs</string>
     <string name="following">Suivant</string>
+    <string name="share_your_profile_now">Partagez votre profil maintenant!</string>
+    <string name="follow_my_github_account">Bonjour! Suivez mon compte Github avec le nom d\'utilisateur: %s</string>
+    <string name="success_add">Ajouter avec succès à l\'utilisateur favori!</string>
+    <string name="failed_proceed">Impossible de continuer!</string>
+    <string name="success_delete">Suppression réussie de l\'utilisateur favori!</string>
 
     <!-- Preference Titles -->
     <string name="language_header">Langue</string>

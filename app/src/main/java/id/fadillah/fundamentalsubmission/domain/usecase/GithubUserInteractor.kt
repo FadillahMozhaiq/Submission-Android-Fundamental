@@ -24,9 +24,15 @@ class GithubUserInteractor(private val githubUserRepository: IGithubUserReposito
     override fun loadListFollowing(username: String): LiveData<List<UserEntity>> =
         githubUserRepository.loadListFollowing(username)
 
-    override fun loaFavoriteUser(): LiveData<List<UserEntity>> =
-        githubUserRepository.loaFavoriteUser()
+    override fun loadFavoriteUser(): LiveData<List<UserEntity>> =
+        githubUserRepository.loadFavoriteUser()
 
-    override fun setFavoriteUser(userEntity: UserEntity) =
+    override fun loadSearchFavoriteUser(query: String): LiveData<List<UserEntity>> =
+        githubUserRepository.loadSearchFavoriteUser(query)
+
+    override fun loadIsFavoriteUser(username: String): LiveData<Boolean> =
+        githubUserRepository.loadIsFavoriteUser(username)
+
+    override suspend fun setFavoriteUser(userEntity: UserEntity) =
         githubUserRepository.setFavoriteUser(userEntity)
 }

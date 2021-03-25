@@ -2,6 +2,7 @@ package id.fadillah.fundamentalsubmission.util
 
 import id.fadillah.fundamentalsubmission.data.model.RepositoryEntity
 import id.fadillah.fundamentalsubmission.data.model.UserEntity
+import id.fadillah.fundamentalsubmission.data.source.local.model.UserDatabaseEntity
 import id.fadillah.fundamentalsubmission.data.source.network.response.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -82,4 +83,44 @@ object DataMapper {
         val formatter = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.US)
         return formatter.format(parser.parse(time))
     }
+
+    fun listUserDatabaseToUserEntity(input: List<UserDatabaseEntity>): List<UserEntity> =
+        input.map {
+            UserEntity(
+                it.username,
+                it.name,
+                it.image,
+                it.company,
+                it.location,
+                it.repository,
+                it.followers,
+                it.following,
+                it.followersUrl,
+                it.followingUrl,
+                it.reposUrl,
+                it.createAt,
+                it.type,
+                it.bio,
+                it.bookmarked
+            )
+        }
+
+    fun userEntityToDatabase(it: UserEntity): UserDatabaseEntity =
+        UserDatabaseEntity(
+            it.username ?: "",
+            it.name,
+            it.image,
+            it.company,
+            it.location,
+            it.repository,
+            it.followers,
+            it.following,
+            it.followersUrl,
+            it.followingUrl,
+            it.reposUrl,
+            it.createAt,
+            it.type,
+            it.bio,
+            it.bookmarked
+        )
 }

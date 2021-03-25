@@ -40,7 +40,7 @@ class FollowingFragment : Fragment(), SearchView.OnQueryTextListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val factory = ViewModelFactory.getInstance()
+        val factory = ViewModelFactory.getInstance(requireContext())
         viewModel = ViewModelProvider(this, factory)[FollowingViewModel::class.java]
 
 //        Data disimpan kedalam viewModel agar bertahan saat perubahan theme yg kembali memanggil onViewCreated

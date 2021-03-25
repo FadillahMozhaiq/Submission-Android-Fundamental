@@ -18,5 +18,6 @@ data class UserEntity(
     val reposUrl: String? = null,
     val createAt: String? = null,
     val type: String? = null,
-    val bio: String? = null
+    val bio: String? = null,
+    var bookmarked: Boolean = false
 ): Parcelable

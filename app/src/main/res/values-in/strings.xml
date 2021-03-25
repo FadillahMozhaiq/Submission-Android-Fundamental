@@ -23,6 +23,11 @@
     <!--    Resource in Detail Actiity-->
     <string name="followers">Pengikut</string>
     <string name="following">Mengikuti</string>
+    <string name="share_your_profile_now">Bagikan profil anda sekarang!</string>
+    <string name="follow_my_github_account">Halo! Ikuti akun Github saya dengan username: %s</string>
+    <string name="success_add">Berhasil menambahkan ke favorit user!</string>
+    <string name="failed_proceed">Gagal memproses!</string>
+    <string name="success_delete">Berhasil menghapus dari favorit user!</string>
 
     <!-- Preference Titles -->
     <string name="language_header">Bahasa</string>
