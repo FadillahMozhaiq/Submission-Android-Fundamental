@@ -40,6 +40,10 @@
     <string name="reminder_title">Atur Pengingat</string>
     <string name="reminder_summary_on">Otomatis mengirimkan notifikasi untuk kembali ke aplikasi pada pukul 09.00 pagi</string>
     <string name="reminder_summary_off">Tidak mengirimkan notifikasi secara otomatis untuk kembali ke aplikasi</string>
+    <string name="reminder_activated">Pengingat diaktifkan!</string>
+    <string name="reminder_deactivated">Pengingat dinonaktifkan!</string>
+    <string name="reminder_message_notification">Ini pengingat untukmu agar kembali ke aplikasi!</string>
+    <string name="reminder_title_notification">Pengingat untuk mu</string>
 
     <!--    Tab Title-->
     <string name="home">Rumah</string>

@@ -3,7 +3,7 @@ package id.fadillah.fundamentalsubmission.ui.activity.imageviewer
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import id.fadillah.fundamentalsubmission.databinding.ActivityImageViewerBinding
-import id.fadillah.fundamentalsubmission.util.ImageHelper
+import id.fadillah.fundamentalsubmission.util.helper.ImageHelper
 
 class ImageViewerActivity : AppCompatActivity() {
     companion object {

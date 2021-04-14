@@ -1,4 +1,4 @@
-package id.fadillah.fundamentalsubmission.util
+package id.fadillah.fundamentalsubmission.util.helper
 
 import id.fadillah.fundamentalsubmission.data.model.RepositoryEntity
 import id.fadillah.fundamentalsubmission.data.model.UserEntity

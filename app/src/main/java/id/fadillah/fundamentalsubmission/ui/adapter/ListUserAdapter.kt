@@ -8,7 +8,7 @@ import id.fadillah.fundamentalsubmission.data.model.UserEntity
 import id.fadillah.fundamentalsubmission.databinding.ItemUserBinding
 import id.fadillah.fundamentalsubmission.ui.activity.detail.DetailActivity
 import id.fadillah.fundamentalsubmission.ui.activity.detail.DetailActivity.Companion.EXTRA_DETAIL_DATA
-import id.fadillah.fundamentalsubmission.util.ImageHelper
+import id.fadillah.fundamentalsubmission.util.helper.ImageHelper
 
 class ListUserAdapter : RecyclerView.Adapter<ListUserAdapter.UserViewHolder>() {
     private val listUser = ArrayList<UserEntity>()

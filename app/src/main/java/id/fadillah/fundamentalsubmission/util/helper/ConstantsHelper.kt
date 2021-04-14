@@ -1,4 +1,4 @@
-package id.fadillah.fundamentalsubmission.util
+package id.fadillah.fundamentalsubmission.util.helper
 
 object ConstantsHelper {
     const val MAIN_URL = "https://api.github.com/"

@@ -28,6 +28,11 @@
     <string name="success_add">Ajouter avec succès à l\'utilisateur favori!</string>
     <string name="failed_proceed">Impossible de continuer!</string>
     <string name="success_delete">Suppression réussie de l\'utilisateur favori!</string>
+    <string name="reminder_activated">Rappel activé!</string>
+    <string name="reminder_deactivated">Rappel désactivé!</string>
+    <string name="reminder_message_notification">Ceci vous rappelle de revenir à l\'application!</string>
+    <string name="reminder_title_notification">Rappel pour vous</string>
+    <string name="reminder_not_activated">Le rappel n\'a pas été activé!</string>
 
     <!-- Preference Titles -->
     <string name="language_header">Langue</string>

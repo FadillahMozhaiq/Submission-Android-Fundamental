@@ -67,7 +67,8 @@
                 tools:ignore="ContentDescription"
                 android:layout_marginStart="@dimen/size_16"
                 android:layout_marginTop="@dimen/size_16"
-                android:layout_marginBottom="@dimen/size_8" />
+                android:layout_marginBottom="@dimen/size_8"
+                app:tint="@color/purple_200" />
 
             <TextView
                 android:id="@+id/tv_stargazers"

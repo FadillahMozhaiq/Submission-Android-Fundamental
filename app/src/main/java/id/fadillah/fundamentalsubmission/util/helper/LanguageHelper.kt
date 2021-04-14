@@ -1,4 +1,4 @@
-package id.fadillah.fundamentalsubmission.util
+package id.fadillah.fundamentalsubmission.util.helper
 
 import android.app.Activity
 import java.util.*

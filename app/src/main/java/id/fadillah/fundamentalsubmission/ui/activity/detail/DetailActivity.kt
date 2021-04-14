@@ -14,7 +14,7 @@ import id.fadillah.fundamentalsubmission.ui.activity.detailfollow.DetailFollowAc
 import id.fadillah.fundamentalsubmission.ui.activity.detailfollow.DetailFollowActivity.Companion.EXTRA_POSITION
 import id.fadillah.fundamentalsubmission.ui.activity.imageviewer.ImageViewerActivity
 import id.fadillah.fundamentalsubmission.ui.activity.imageviewer.ImageViewerActivity.Companion.EXTRA_DETAIL_IMAGE
-import id.fadillah.fundamentalsubmission.util.ImageHelper
+import id.fadillah.fundamentalsubmission.util.helper.ImageHelper
 import id.fadillah.fundamentalsubmission.viewmodel.ViewModelFactory
 
 class DetailActivity : AppCompatActivity() {

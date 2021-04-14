@@ -1,7 +1,7 @@
 package id.fadillah.fundamentalsubmission.data.source.network
 
 import id.fadillah.fundamentalsubmission.data.source.network.response.*
-import id.fadillah.fundamentalsubmission.util.ConstantsHelper
+import id.fadillah.fundamentalsubmission.util.helper.ConstantsHelper
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers

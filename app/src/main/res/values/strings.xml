@@ -40,6 +40,11 @@
     <string name="reminder_title">Set Reminder</string>
     <string name="reminder_summary_on">Automatically sends notification to return to the application at 09.00 AM</string>
     <string name="reminder_summary_off">Does not automatically send a notification to return to the application</string>
+    <string name="reminder_activated">Reminder activated!</string>
+    <string name="reminder_deactivated">Reminder deactivated!</string>
+    <string name="reminder_message_notification">This is reminder for you to get back to the app!</string>
+    <string name="reminder_title_notification">Reminder For You</string>
+    <string name="reminder_not_activated">Reminder has not activated!</string>
 
 <!--    Tab Title-->
     <string name="home">Home</string>

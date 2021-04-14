@@ -7,8 +7,12 @@ import com.codeboy.pager2_transformers.Pager2_CubeOutTransformer
 import id.fadillah.fundamentalsubmission.R
 import id.fadillah.fundamentalsubmission.databinding.ActivityMainBinding
 import id.fadillah.fundamentalsubmission.ui.adapter.SectionsMainPagerAdapter
+import id.fadillah.fundamentalsubmission.ui.fragment.timepicker.TimePickerFragment
+import id.fadillah.fundamentalsubmission.util.broadcastreceiver.AlarmReceiver
+import java.text.SimpleDateFormat
+import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), TimePickerFragment.DialogTimeListener {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var pagerAdapter: SectionsMainPagerAdapter
@@ -39,5 +43,17 @@ class MainActivity : AppCompatActivity() {
                 binding.tabs.setSelected(position)
             }
         })
+    }
+
+    override fun onDialogTimeSet(hourOfDay: Int, minute: Int) {
+        val alarmReceiver = AlarmReceiver()
+        val calendar = Calendar.getInstance()
+        calendar.set(Calendar.HOUR_OF_DAY, hourOfDay)
+        calendar.set(Calendar.MINUTE, minute)
+
+        val dateFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
+
+        val date = dateFormat.format(calendar.time)
+        alarmReceiver.setRepeatingAlarm(this, date)
     }
 }

@@ -7,7 +7,7 @@ import id.fadillah.fundamentalsubmission.data.model.UserEntity
 import id.fadillah.fundamentalsubmission.data.source.local.LocalDataSource
 import id.fadillah.fundamentalsubmission.data.source.network.RemoteDataSource
 import id.fadillah.fundamentalsubmission.domain.repository.IGithubUserRepository
-import id.fadillah.fundamentalsubmission.util.DataMapper
+import id.fadillah.fundamentalsubmission.util.helper.DataMapper
 
 class GithubUserRepository(
     private val localDataSource: LocalDataSource,

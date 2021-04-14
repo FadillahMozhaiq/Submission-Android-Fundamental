@@ -4,22 +4,31 @@ import android.app.Activity
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.SwitchPreferenceCompat
 import id.fadillah.fundamentalsubmission.R
 import id.fadillah.fundamentalsubmission.ui.activity.splash.SplashActivity
-import id.fadillah.fundamentalsubmission.util.LanguageHelper
+import id.fadillah.fundamentalsubmission.ui.fragment.timepicker.TimePickerFragment
+import id.fadillah.fundamentalsubmission.util.broadcastreceiver.AlarmReceiver
+import id.fadillah.fundamentalsubmission.util.helper.LanguageHelper
 
 
-class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
+class SettingsFragment : PreferenceFragmentCompat(),
+    SharedPreferences.OnSharedPreferenceChangeListener,
+    TimePickerFragment.DialogTimeCancelListener {
 
     companion object {
         const val KEY_LANGUAGE = "language"
         const val KEY_REMINDER = "reminder"
     }
 
+    private lateinit var alarmReceiver: AlarmReceiver
+
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.root_preferences, rootKey)
+        alarmReceiver = AlarmReceiver()
     }
 
     override fun onResume() {
@@ -41,8 +50,19 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
             restartApp(requireActivity())
         } else if (key.equals(KEY_REMINDER)) {
             val setReminder = sharedPreferences?.getBoolean(key, false)
-            if (setReminder == true)
-                Toast.makeText(context, "Not yet implemented!", Toast.LENGTH_SHORT).show()
+            if (setReminder == true) {
+                TimePickerFragment().show(childFragmentManager, "TimePicker")
+            } else {
+                if (alarmReceiver.isAlarmSet(requireContext())) {
+                    alarmReceiver.cancelAlarm(requireContext())
+                } else {
+                    Toast.makeText(
+                        context,
+                        getString(R.string.reminder_not_activated),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
         }
     }
 
@@ -50,5 +70,17 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
         val mStartActivity = Intent(activity, SplashActivity::class.java)
         activity.startActivity(mStartActivity)
         activity.finish()
+    }
+
+    override fun onDialogCancel(canceled: Boolean) {
+        if (canceled) {
+            Toast.makeText(
+                context,
+                getString(R.string.reminder_not_activated),
+                Toast.LENGTH_SHORT
+            ).show()
+            val reminderSwitch = findPreference<SwitchPreferenceCompat>("reminder")
+            reminderSwitch?.switchTextOff
+        }
     }
 }

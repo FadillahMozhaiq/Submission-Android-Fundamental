@@ -10,7 +10,7 @@ import id.fadillah.fundamentalsubmission.ui.fragment.followers.FollowersViewMode
 import id.fadillah.fundamentalsubmission.ui.fragment.following.FollowingViewModel
 import id.fadillah.fundamentalsubmission.ui.fragment.home.HomeViewModel
 import id.fadillah.fundamentalsubmission.ui.fragment.repository.RepositoryViewModel
-import id.fadillah.fundamentalsubmission.util.Injection
+import id.fadillah.fundamentalsubmission.util.injection.Injection
 
 class ViewModelFactory(private val githubUserUseCase: GithubUserUseCase): ViewModelProvider.NewInstanceFactory() {
 

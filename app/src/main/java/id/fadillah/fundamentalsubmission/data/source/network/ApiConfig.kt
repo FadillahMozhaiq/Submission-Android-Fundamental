@@ -1,6 +1,6 @@
 package id.fadillah.fundamentalsubmission.data.source.network
 
-import id.fadillah.fundamentalsubmission.util.ConstantsHelper.MAIN_URL
+import id.fadillah.fundamentalsubmission.util.helper.ConstantsHelper.MAIN_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

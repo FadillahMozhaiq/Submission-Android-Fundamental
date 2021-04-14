@@ -1,4 +1,4 @@
-package id.fadillah.fundamentalsubmission.util
+package id.fadillah.fundamentalsubmission.util.injection
 
 import android.content.Context
 import id.fadillah.fundamentalsubmission.data.GithubUserRepository

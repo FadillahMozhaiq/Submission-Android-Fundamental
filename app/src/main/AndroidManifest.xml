@@ -11,10 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FundamentalSubmission">
+        <receiver
+            android:name=".util.broadcastreceiver.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
         <activity android:name=".ui.activity.detailfollow.DetailFollowActivity" />
         <activity android:name=".ui.activity.imageviewer.ImageViewerActivity" />
         <activity
             android:name=".ui.activity.splash.SplashActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.FundamentalSubmission.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,9 +35,9 @@
             android:theme="@style/Theme.FundamentalSubmission.NoActionBar" />
         <activity
             android:name=".ui.activity.main.MainActivity"
-            android:theme="@style/Theme.FundamentalSubmission.NoActionBar"
+            android:configChanges="locale"
             android:screenOrientation="portrait"
-            android:configChanges="locale" />
+            android:theme="@style/Theme.FundamentalSubmission.NoActionBar" />
     </application>
 
 </manifest>

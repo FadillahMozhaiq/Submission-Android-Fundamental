@@ -12,7 +12,7 @@ import androidx.preference.PreferenceManager
 import id.fadillah.fundamentalsubmission.R
 import id.fadillah.fundamentalsubmission.ui.activity.main.MainActivity
 import id.fadillah.fundamentalsubmission.ui.fragment.setting.SettingsFragment.Companion.KEY_LANGUAGE
-import id.fadillah.fundamentalsubmission.util.LanguageHelper
+import id.fadillah.fundamentalsubmission.util.helper.LanguageHelper
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
