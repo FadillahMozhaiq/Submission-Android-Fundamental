@@ -1,0 +1,78 @@
+<resources>
+    <!--    App Name-->
+    <string name="app_name">Consummer App</string>
+
+    <!--    Title of Activity-->
+    <string name="title_activity_detail">DetailActivity</string>
+
+    <!--    Splash Resource-->
+    <string name="android_consumer">Android Consumer</string>
+    <string name="dicoding">Dicoding Submission</string>
+
+    <!--    Home Header-->
+    <string name="hello_reviewer">Bonjour Reviewer,</string>
+    <string name="welcome_back">Content de te revoir!\nConsumer App</string>
+
+    <!--    Placeholder Detail Activity-->
+    <string name="my_name">Fadillah Mozhaiq Ramadhani</string>
+    <string name="google">Google, Inc</string>
+    <string name="my_bio">Ma biographie</string>
+    <string name="its_empty">Désolé, c\'est vide</string>
+    <string name="long_lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra et urna in dictum. Mauris id dui vel diam vestibulum dictum. In sit amet sapien sem. Suspendisse semper eleifend urna, sed iaculis lectus scelerisque vel. Cras aliquam turpis ante, quis laoreet magna ullamcorper a. Quisque eleifend mollis blandit. Nunc accumsan lectus et ex sodales porta. Nulla consectetur leo nec lacus facilisis, sed interdum sapien maximus. Nulla finibus ipsum at lectus eleifend, id faucibus dui dapibus. Maecenas vel dolor magna.\n\nMorbi nulla dui, luctus fringilla dolor non, dapibus elementum orci. Suspendisse sit amet tellus congue, porta neque eu, molestie elit. Quisque ac laoreet turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam vitae pellentesque felis. Donec congue massa sed tempor molestie. Integer auctor neque ac lectus blandit interdum. Pellentesque interdum at risus in gravida. Proin facilisis diam urna, ut facilisis mauris vestibulum ut. Proin velit risus, suscipit nec nisi placerat, pulvinar accumsan purus. Vestibulum interdum placerat magna, in consectetur arcu. Mauris dictum feugiat justo, at vulputate nunc facilisis non. Etiam pulvinar lorem eget ornare laoreet. Aliquam laoreet ligula at ex eleifend mollis. Cras ultrices aliquet lorem.</string>
+
+    <!--    Resource in Detail Actiity-->
+    <string name="loading">Chargement…</string>
+    <string name="followers">Suiveurs</string>
+    <string name="following">Suivant</string>
+    <string name="share_your_profile_now">Partagez votre profil maintenant!</string>
+    <string name="follow_my_github_account">Bonjour! Suivez mon compte Github avec le nom d\'utilisateur: %s</string>
+    <string name="success_add">Ajouter avec succès à l\'utilisateur favori!</string>
+    <string name="failed_proceed">Impossible de continuer!</string>
+    <string name="success_delete">Suppression réussie de l\'utilisateur favori!</string>
+    <string name="reminder_activated">Rappel activé!</string>
+    <string name="reminder_deactivated">Rappel désactivé!</string>
+    <string name="reminder_message_notification">Ceci vous rappelle de revenir à l\'application!</string>
+    <string name="reminder_title_notification">Rappel pour vous</string>
+    <string name="reminder_not_activated">Le rappel n\'a pas été activé!</string>
+
+    <!-- Preference Titles -->
+    <string name="language_header">Langue</string>
+    <string name="reminder_header">Rappel</string>
+
+    <!-- Language Preferences -->
+    <string name="language_title">Choisissez votre langue</string>
+
+    <!-- Reminder Preferences -->
+    <string name="reminder_title">Définir un rappel</string>
+    <string name="reminder_summary_on">Envoie automatiquement une notification pour revenir à l\'application à 09h00</string>
+    <string name="reminder_summary_off">N\'envoie pas automatiquement de notification pour revenir à l\'application</string>
+
+    <!--    Tab Title-->
+    <string name="home">Maison</string>
+    <string name="favorite">Favori</string>
+    <string name="settings">Réglages</string>
+
+    <!--    Search Hint-->
+    <string name="search_user">Rechercher un utilisateur</string>
+    <string name="search_favorite">Rechercher un favori</string>
+    <string name="search_followers">Rechercher des abonnés</string>
+    <string name="search_following">Recherche après</string>
+
+    <!--    Plurals     -->
+    <plurals name="followers_tab_title">
+        <item quantity="one">%d Disciple</item>
+        <item quantity="other">%d Suiveurs</item>
+    </plurals>
+    <plurals name="following_tab_title">
+        <item quantity="one">%d Suivant</item>
+        <item quantity="other">%d Suivi</item>
+    </plurals>
+    <plurals name="repository_tab_title">
+        <item quantity="one"> %d Dépôt</item>
+        <item quantity="other"> %d Référentiels</item>
+    </plurals>
+    <plurals name="count_repository">
+        <item quantity="one"> %d Dépôt</item>
+        <item quantity="other"> %d Référentiels</item>
+    </plurals>
+</resources>

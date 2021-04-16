@@ -21,6 +21,7 @@
     <string name="long_lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra et urna in dictum. Mauris id dui vel diam vestibulum dictum. In sit amet sapien sem. Suspendisse semper eleifend urna, sed iaculis lectus scelerisque vel. Cras aliquam turpis ante, quis laoreet magna ullamcorper a. Quisque eleifend mollis blandit. Nunc accumsan lectus et ex sodales porta. Nulla consectetur leo nec lacus facilisis, sed interdum sapien maximus. Nulla finibus ipsum at lectus eleifend, id faucibus dui dapibus. Maecenas vel dolor magna.\n\nMorbi nulla dui, luctus fringilla dolor non, dapibus elementum orci. Suspendisse sit amet tellus congue, porta neque eu, molestie elit. Quisque ac laoreet turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam vitae pellentesque felis. Donec congue massa sed tempor molestie. Integer auctor neque ac lectus blandit interdum. Pellentesque interdum at risus in gravida. Proin facilisis diam urna, ut facilisis mauris vestibulum ut. Proin velit risus, suscipit nec nisi placerat, pulvinar accumsan purus. Vestibulum interdum placerat magna, in consectetur arcu. Mauris dictum feugiat justo, at vulputate nunc facilisis non. Etiam pulvinar lorem eget ornare laoreet. Aliquam laoreet ligula at ex eleifend mollis. Cras ultrices aliquet lorem.</string>
 
     <!--    Resource in Detail Actiity-->
+    <string name="loading">Memuat…</string>
     <string name="followers">Pengikut</string>
     <string name="following">Mengikuti</string>
     <string name="share_your_profile_now">Bagikan profil anda sekarang!</string>
@@ -44,6 +45,7 @@
     <string name="reminder_deactivated">Pengingat dinonaktifkan!</string>
     <string name="reminder_message_notification">Ini pengingat untukmu agar kembali ke aplikasi!</string>
     <string name="reminder_title_notification">Pengingat untuk mu</string>
+    <string name="reminder_not_activated">Pengingat belum di aktifkan!</string>
 
     <!--    Tab Title-->
     <string name="home">Rumah</string>
@@ -69,4 +71,8 @@
     <plurals name="count_repository">
         <item quantity="other"> %d Penyimpanan</item>
     </plurals>
+
+    <!--    Widget-->
+    <string name="appwidget_text">Pengguna Favorit</string>
+    <string name="empty_text">Pengguna Favorit Kosong!</string>
 </resources>

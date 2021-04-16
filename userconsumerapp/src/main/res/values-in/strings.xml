@@ -1,0 +1,74 @@
+<resources>
+    <!--    App Name-->
+    <string name="app_name">Consummer App</string>
+
+    <!--    Title of Activity-->
+    <string name="title_activity_detail">DetailActivity</string>
+
+    <!--    Splash Resource-->
+    <string name="android_consumer">Android Consumer</string>
+    <string name="dicoding">Dicoding Submission</string>
+
+    <!--    Home Header-->
+    <string name="hello_reviewer">Halo Reviewer,</string>
+    <string name="welcome_back">Selamat Datang Kembali!\nConsumer App</string>
+
+    <!--    Placeholder Detail Activity-->
+    <string name="my_name">Fadillah Mozhaiq Ramadhani</string>
+    <string name="google">Google, Inc</string>
+    <string name="my_bio">Bio Saya</string>
+    <string name="its_empty">Maaf, ini kosong!</string>
+    <string name="long_lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra et urna in dictum. Mauris id dui vel diam vestibulum dictum. In sit amet sapien sem. Suspendisse semper eleifend urna, sed iaculis lectus scelerisque vel. Cras aliquam turpis ante, quis laoreet magna ullamcorper a. Quisque eleifend mollis blandit. Nunc accumsan lectus et ex sodales porta. Nulla consectetur leo nec lacus facilisis, sed interdum sapien maximus. Nulla finibus ipsum at lectus eleifend, id faucibus dui dapibus. Maecenas vel dolor magna.\n\nMorbi nulla dui, luctus fringilla dolor non, dapibus elementum orci. Suspendisse sit amet tellus congue, porta neque eu, molestie elit. Quisque ac laoreet turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam vitae pellentesque felis. Donec congue massa sed tempor molestie. Integer auctor neque ac lectus blandit interdum. Pellentesque interdum at risus in gravida. Proin facilisis diam urna, ut facilisis mauris vestibulum ut. Proin velit risus, suscipit nec nisi placerat, pulvinar accumsan purus. Vestibulum interdum placerat magna, in consectetur arcu. Mauris dictum feugiat justo, at vulputate nunc facilisis non. Etiam pulvinar lorem eget ornare laoreet. Aliquam laoreet ligula at ex eleifend mollis. Cras ultrices aliquet lorem.</string>
+
+    <!--    Resource in Detail Actiity-->
+    <string name="loading">Memuat…</string>
+    <string name="followers">Pengikut</string>
+    <string name="following">Mengikuti</string>
+    <string name="share_your_profile_now">Bagikan profil anda sekarang!</string>
+    <string name="follow_my_github_account">Halo! Ikuti akun Github saya dengan username: %s</string>
+    <string name="success_add">Berhasil menambahkan ke favorit user!</string>
+    <string name="failed_proceed">Gagal memproses!</string>
+    <string name="success_delete">Berhasil menghapus dari favorit user!</string>
+
+    <!-- Preference Titles -->
+    <string name="language_header">Bahasa</string>
+    <string name="reminder_header">Pengingat</string>
+
+    <!-- Language Preferences -->
+    <string name="language_title">Pilih bahasa anda</string>
+
+    <!-- Reminder Preferences -->
+    <string name="reminder_title">Atur Pengingat</string>
+    <string name="reminder_summary_on">Otomatis mengirimkan notifikasi untuk kembali ke aplikasi pada pukul 09.00 pagi</string>
+    <string name="reminder_summary_off">Tidak mengirimkan notifikasi secara otomatis untuk kembali ke aplikasi</string>
+    <string name="reminder_activated">Pengingat diaktifkan!</string>
+    <string name="reminder_deactivated">Pengingat dinonaktifkan!</string>
+    <string name="reminder_message_notification">Ini pengingat untukmu agar kembali ke aplikasi!</string>
+    <string name="reminder_title_notification">Pengingat untuk mu</string>
+    <string name="reminder_not_activated">Pengingat belum di aktifkan!</string>
+
+    <!--    Tab Title-->
+    <string name="home">Rumah</string>
+    <string name="favorite">Favorit</string>
+    <string name="settings">Pengaturan</string>
+
+    <!--    Search Hint-->
+    <string name="search_user">Cari Pengguna</string>
+    <string name="search_favorite">Cari Favorit</string>
+    <string name="search_followers">Cari Pengikut</string>
+    <string name="search_following">Cari Mengikuti</string>
+
+    <!--    Plurals     -->
+    <plurals name="followers_tab_title">
+        <item quantity="other">%d Pengikut</item>
+    </plurals>
+    <plurals name="following_tab_title">
+        <item quantity="other">%d Mengikuti</item>
+    </plurals>
+    <plurals name="repository_tab_title">
+        <item quantity="other"> %d Penyimpanan</item>
+    </plurals>
+    <plurals name="count_repository">
+        <item quantity="other"> %d Penyimpanan</item>
+    </plurals>
+</resources>

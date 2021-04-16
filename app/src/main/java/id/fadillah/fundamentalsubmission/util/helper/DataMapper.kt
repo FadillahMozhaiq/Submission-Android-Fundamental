@@ -107,20 +107,20 @@ object DataMapper {
 
     fun userEntityToDatabase(it: UserEntity): UserDatabaseEntity =
         UserDatabaseEntity(
-            it.username ?: "",
-            it.name,
-            it.image,
-            it.company,
-            it.location,
-            it.repository,
-            it.followers,
-            it.following,
-            it.followersUrl,
-            it.followingUrl,
-            it.reposUrl,
-            it.createAt,
-            it.type,
-            it.bio,
-            it.bookmarked
+            username = it.username ?: "",
+            name = it.name,
+            image = it.image,
+            company = it.company,
+            location = it.location,
+            repository = it.repository,
+            followers = it.followers,
+            following = it.following,
+            followersUrl = it.followersUrl,
+            followingUrl = it.followingUrl,
+            reposUrl = it.reposUrl,
+            createAt = it.createAt,
+            type = it.type,
+            bio = it.bio,
+            bookmarked = it.bookmarked
         )
 }

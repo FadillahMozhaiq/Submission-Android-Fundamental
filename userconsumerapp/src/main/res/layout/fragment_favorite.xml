@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_search_favorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_24"
+        android:layout_marginTop="@dimen/size_16"
+        android:layout_marginEnd="@dimen/size_24"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="@dimen/size_8">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/sv_search_favorite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="4dp"
+            android:paddingTop="4dp"
+            style="@style/TextInputSearch"
+            app:iconifiedByDefault="false"
+            app:queryHint="@string/search_favorite"
+            android:inputType="textCapSentences"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_user_favorite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/size_8"
+        android:layout_marginTop="@dimen/size_8"
+        tools:listitem="@layout/item_user"/>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/layout_shimmer"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/size_8"
+        android:padding="@dimen/size_8" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/item_user_shimmer" />
+
+            <include layout="@layout/item_user_shimmer" />
+
+            <include layout="@layout/item_user_shimmer" />
+
+            <include layout="@layout/item_user_shimmer" />
+
+            <include layout="@layout/item_user_shimmer" />
+
+            <include layout="@layout/item_user_shimmer" />
+
+            <include layout="@layout/item_user_shimmer" />
+
+            <include layout="@layout/item_user_shimmer" />
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_empty"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/iv_emote"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:src="@drawable/dissatisfied_emoticon"
+            android:layout_centerInParent="true"
+            app:tint="@color/teal_700"
+            tools:ignore="ContentDescription"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_emote"
+            android:textSize="18sp"
+            android:fontFamily="@font/italic"
+            android:layout_centerHorizontal="true"
+            android:text="@string/its_empty" />
+    </RelativeLayout>
+
+</LinearLayout>

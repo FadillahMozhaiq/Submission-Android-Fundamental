@@ -10,11 +10,13 @@ import id.fadillah.fundamentalsubmission.domain.usecase.GithubUserUseCase
 
 object Injection {
     private fun provideRepository(context: Context): GithubUserRepository {
-        val database = UserDatabase.getInstance(context)
-
-        val localDataSource = LocalDataSource(database.userDao())
         val remoteDataSource = RemoteDataSource.getInstance()
-        return GithubUserRepository.getInstance(localDataSource, remoteDataSource)
+        return GithubUserRepository.getInstance(provideLocalDataSource(context), remoteDataSource)
+    }
+
+    fun provideLocalDataSource(context: Context): LocalDataSource {
+        val database = UserDatabase.getInstance(context)
+        return LocalDataSource(database.userDao())
     }
 
     fun provideGithubUseCase(context: Context): GithubUserUseCase {

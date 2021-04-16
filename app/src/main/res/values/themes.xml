@@ -35,8 +35,13 @@
         <item name="contentScrim">@color/light_theme_toolbar</item>
     </style>
 
-    <style name="TabsFollowColor" >
+    <style name="TabsFollowColor">
         <item name="tabTextColor">@color/text_color</item>
         <item name="tabSelectedTextColor">@color/purple_500</item>
+    </style>
+
+    <style name="ThemeOverlay.FundamentalSubmission.AppWidgetContainer" parent="">
+        <item name="appWidgetBackgroundColor">@color/light_blue_600</item>
+        <item name="appWidgetTextColor">@color/light_blue_50</item>
     </style>
 </resources>

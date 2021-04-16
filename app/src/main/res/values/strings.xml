@@ -1,26 +1,27 @@
 <resources>
-<!--    App Name-->
+    <!--    App Name-->
     <string name="app_name">Fundamental Submission</string>
 
-<!--    Title of Activity-->
+    <!--    Title of Activity-->
     <string name="title_activity_detail">DetailActivity</string>
 
-<!--    Splash Resource-->
+    <!--    Splash Resource-->
     <string name="android_fundamental">Android Fundamental</string>
     <string name="dicoding">Dicoding Submission</string>
 
-<!--    Home Header-->
+    <!--    Home Header-->
     <string name="hello_reviewer">Hello Reviewer,</string>
     <string name="welcome_back">Welcome Back!</string>
 
-<!--    Placeholder Detail Activity-->
+    <!--    Placeholder Detail Activity-->
     <string name="my_name">Fadillah Mozhaiq Ramadhani</string>
     <string name="google">Google, Inc</string>
     <string name="my_bio">My Bio</string>
     <string name="its_empty">Sorry, it\'s empty</string>
     <string name="long_lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra et urna in dictum. Mauris id dui vel diam vestibulum dictum. In sit amet sapien sem. Suspendisse semper eleifend urna, sed iaculis lectus scelerisque vel. Cras aliquam turpis ante, quis laoreet magna ullamcorper a. Quisque eleifend mollis blandit. Nunc accumsan lectus et ex sodales porta. Nulla consectetur leo nec lacus facilisis, sed interdum sapien maximus. Nulla finibus ipsum at lectus eleifend, id faucibus dui dapibus. Maecenas vel dolor magna.\n\nMorbi nulla dui, luctus fringilla dolor non, dapibus elementum orci. Suspendisse sit amet tellus congue, porta neque eu, molestie elit. Quisque ac laoreet turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam vitae pellentesque felis. Donec congue massa sed tempor molestie. Integer auctor neque ac lectus blandit interdum. Pellentesque interdum at risus in gravida. Proin facilisis diam urna, ut facilisis mauris vestibulum ut. Proin velit risus, suscipit nec nisi placerat, pulvinar accumsan purus. Vestibulum interdum placerat magna, in consectetur arcu. Mauris dictum feugiat justo, at vulputate nunc facilisis non. Etiam pulvinar lorem eget ornare laoreet. Aliquam laoreet ligula at ex eleifend mollis. Cras ultrices aliquet lorem.</string>
 
-<!--    Resource in Detail Activity-->
+    <!--    Resource in Detail Activity-->
+    <string name="loading">Loading…</string>
     <string name="followers">Followers</string>
     <string name="following">Following</string>
     <string name="share_your_profile_now">Share your profile now!</string>
@@ -46,12 +47,12 @@
     <string name="reminder_title_notification">Reminder For You</string>
     <string name="reminder_not_activated">Reminder has not activated!</string>
 
-<!--    Tab Title-->
+    <!--    Tab Title-->
     <string name="home">Home</string>
     <string name="favorite">Favorite</string>
     <string name="settings">Settings</string>
 
-<!--    Search Hint-->
+    <!--    Search Hint-->
     <string name="search_user">Search User</string>
     <string name="search_favorite">Search Favorite</string>
     <string name="search_followers">Search Followers</string>
@@ -74,4 +75,8 @@
         <item quantity="one"> %d Repository</item>
         <item quantity="other"> %d Repositories</item>
     </plurals>
+
+<!--    Widget-->
+    <string name="appwidget_text">Favorite User</string>
+    <string name="empty_text">Favorite User is Empty!</string>
 </resources>

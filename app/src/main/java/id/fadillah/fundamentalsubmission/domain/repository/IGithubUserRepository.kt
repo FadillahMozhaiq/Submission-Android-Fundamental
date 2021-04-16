@@ -15,4 +15,5 @@ interface IGithubUserRepository {
     fun loadSearchFavoriteUser(query: String): LiveData<List<UserEntity>>
     fun loadIsFavoriteUser(username: String): LiveData<Boolean>
     suspend fun setFavoriteUser(userEntity: UserEntity)
+    fun loadFavoriteForWidget(): List<UserEntity>
 }

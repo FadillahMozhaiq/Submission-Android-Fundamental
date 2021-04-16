@@ -17,4 +17,6 @@
     <color name="light_theme_toolbar">#FFEEEEEE</color>
     <color name="dark_theme_toolbar">#424242</color>
     <color name="status_bar_color">#F4F4F4</color>
+    <color name="light_blue_50">#FFE1F5FE</color>
+    <color name="light_blue_200">#FF81D4FA</color>
 </resources>

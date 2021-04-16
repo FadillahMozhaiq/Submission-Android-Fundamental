@@ -1,5 +1,6 @@
 package id.fadillah.fundamentalsubmission.data.source.local.room
 
+import android.database.Cursor
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import id.fadillah.fundamentalsubmission.data.source.local.model.UserDatabaseEntity
@@ -18,4 +19,19 @@ interface UserDao {
 
     @Delete
     suspend fun deleteUser(user: UserDatabaseEntity)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertUserCursor(user: UserDatabaseEntity): Long
+
+    @Query("SELECT * FROM user_table")
+    fun loadAllUserCursor(): Cursor?
+
+    @Query("SELECT * FROM user_table WHERE username LIKE :username ")
+    fun loadSearchUserCursor(username: String): Cursor?
+
+    @Query("DELETE FROM user_table WHERE username LIKE :username")
+    fun deleteUserCursorById(username: String): Int
+
+    @Query("SELECT * FROM user_table")
+    fun loadAllUserForWidget(): List<UserDatabaseEntity>
 }

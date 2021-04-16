@@ -35,4 +35,7 @@ class GithubUserInteractor(private val githubUserRepository: IGithubUserReposito
 
     override suspend fun setFavoriteUser(userEntity: UserEntity) =
         githubUserRepository.setFavoriteUser(userEntity)
+
+    override fun loadFavoriteForWidget(): List<UserEntity> =
+        githubUserRepository.loadFavoriteForWidget()
 }

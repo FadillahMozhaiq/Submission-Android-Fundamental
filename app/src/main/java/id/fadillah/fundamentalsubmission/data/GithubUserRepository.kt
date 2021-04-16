@@ -77,4 +77,6 @@ class GithubUserRepository(
             localDataSource.deleteUser(DataMapper.userEntityToDatabase(userEntity))
         }
     }
+
+    override fun loadFavoriteForWidget(): List<UserEntity> = DataMapper.listUserDatabaseToUserEntity(localDataSource.loadAllUserForWidget())
 }
